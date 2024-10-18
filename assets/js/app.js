@@ -95,7 +95,10 @@ const openTabs = () => {
             companies.style.height = 'auto';
 
             // Esconde todas as tabs abertas
-            tabElements.forEach(tab => tab.classList.replace('opacity-100', 'opacity-0'));
+            tabElements.forEach(tab => {
+              tab.classList.replace('opacity-100', 'opacity-0')
+              tab.classList.remove('z-10');
+            });
 
             // Pega o nome da tab a ser exibida
             const targetTab = tabs.children.namedItem(branding.dataset.name);
@@ -115,9 +118,11 @@ const openTabs = () => {
 
                 // Exibe a tab correspondente
                 targetTab.classList.replace('opacity-0', 'opacity-100');
+                targetTab.classList.add('z-10');
             } else {
                 // Se já estiver visível, oculta a tab
                 targetTab.classList.replace('opacity-100', 'opacity-0');
+                targetTab.classList.remove('z-10');
             }
         });
     });
