@@ -88,6 +88,10 @@ const openTabs = () => {
     if (tabs)
         tabElements = Array.from(tabs.children);
 
+    tabElements[0].classList.replace('opacity-0', 'opacity-100');
+    brandings[0].classList.add('border-orange-500');
+    companies.style.height = `${heightCompaniesSections + tabElements[0].getBoundingClientRect().height}px`;
+
     // Adiciona o evento de click em cada branding
     brandings.forEach(branding => {
         branding.addEventListener('click', (e) => {
