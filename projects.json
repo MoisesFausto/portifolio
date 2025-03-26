@@ -1,0 +1,59 @@
+[
+  {
+    "name": "lasa",
+    "title": "Lasa",
+    "description": "<p>Colaboro com a equipe para otimizar as rotinas do banco de dados e refatorar o sistema <strong>Laravel 5</strong> e <strong>MySQL</strong>, com o objetivo de melhorar o desempenho e reduzir o tempo de resposta do servidor. Isso garante que o impacto para os logistas, que são os usuários finais, seja o mais atualizado possível, com o mínimo de atraso. No início do projeto, o sistema levava em média 27 segundos para carregar a tela com todos os dados. Após um trabalho de refatoração, conseguimos reduzir esse tempo para 3 segundos, melhorando a qualidade e eficiência do código.</p>",
+    "logo": "americanas.png",
+    "techs": ["Laravel 5", "MySQL", "PHP", "HTML", "CSS", "JavaScript", "Bootstrap", "Git", "Jira", "Confluence", "Google Cloud Plaform", "Docker"]
+  },
+  {
+    "name": "infoconsig",
+    "title": "Infoconsig",
+    "description": "Atuo como desenvolvedor front end sênior, elaborando e desenvolvendo junto da equipe as telas necessárias para que o novo sistema possa ser implementado de acordo com as normativas contratuais. Garantindo sempre qualidade do software e do código com teste e metodologias.",
+    "logo": "infoconsig.png",
+    "techs": ["Vue Js 3", "Pinia", "Typescript", "Tailwind CSS", "HTML", "CSS", "JavaScript"]
+  },
+  {
+    "name": "govbr",
+    "title": "GOV.BR",
+    "description": "Responsável pela manutenção e melhoria de diversos sistemas do governo, os quais são utilizados para entendimento e combate à miséria. São projetos e sistemas que fazem uso de diversos microservices. Nossa prioridade é a melhoria contínua demandada pelo gerente da respectiva área, sempre atentando aos critérios de aprimoramento definidos pelo time de revisão. Nosso trabalho impacta diretamente cidadãos brasileiros que necessitam de tais serviços básicos como prioridade.",
+    "logo": "govbr.png",
+    "techs": ["PHP", "Laravel", "Symfony", "API Plattaform", "Adianti Framework", "PostgreSQL",
+      "RabbitMQ", "React Native"]
+  },
+  {
+    "name": "riocard",
+    "title": "Riocard Mais",
+    "description": "<p>Nesse projeto de um importante provedor de serviços de bilhetagem de transporte do Rio de Janeiro, fui responsável, junto com a equipe de front-end, por migrar o sistema legado para uma nova plataforma, utilizando tecnologias mais performáticas, como <strong>Vue 3, Vuetify, TypeScript, Pinia e AWS</strong>. Em colaboração com o arquiteto e o profissional de UX/UI, desenvolvemos as funcionalidades e componentes para garantir que as telas do Figma fossem o mais perfeitas possível e proporcionassem a melhor experiência ao usuário.</p> <p>Enfrentamos o desafio de entregar um sistema completo do zero dentro de um prazo apertado, enfrentando também desfalques na equipe durante o processo. No entanto, mesmo com essas dificuldades, conseguimos entregar o sistema completo para o cliente com o mais alto nível de performance.</p>",
+    "logo": "riocard.png",
+    "techs": ["Vue Js 3", "Typescript", "Pinia", "HTML", "CSS", "JavaScript", "AWS", "Jira"]
+  },
+  {
+    "name": "senar",
+    "title": "Senar MT",
+    "description": "<p>Esse projeto foi uma incrível oportunidade de aprendizado para mim, pois envolveu o desenvolvimento de um sistema de cadastro de vagas e oportunidades para profissionais da área rural. Nele, assumi responsabilidades tanto no backend, utilizando <strong>Laravel 8</strong> e <strong>MariaDB</strong>, quanto no frontend com <strong>Vue 2</strong>.</p> <p>Mantivemos um ritmo ágil de entregas dentro das sprints, sempre priorizando a performance e a usabilidade para o cliente. Foi gratificante ver o sistema completo sendo entregue dentro do prazo, demonstrando alta qualidade e atendendo às expectativas do cliente. Além disso, o desafio de lidar com as nuances do desenvolvimento tanto no backend quanto no frontend me proporcionou um valioso crescimento profissional e pessoal.</p>",
+    "logo": "riocard.png",
+    "techs": ["Vue Js 2", "Vuex", "HTML", "CSS", "JavaScript", "PHP", "Laravel", "Maria DB", "React Native", "Docker"]
+  },
+  {
+    "name": "klini",
+    "title": "Klini Saúde",
+    "description": "<p>Trabalhar em uma startup foi uma experiência extremamente desafiadora e enriquecedora para mim. Durante esse período, não apenas me concentrei na área de desenvolvimento, mas também mergulhei em diversas outras áreas para compreender as dificuldades e, assim, aprimorar o sistema que tinha como objetivo possibilitar vendas online de planos de saúde.</p> <p>Além de estar envolvido no desenvolvimento da aplicação, que era baseada em <strong>PHP 7.4</strong> e <strong>MySQL</strong>, enfrentamos o desafio adicional de migrar de um sistema legado de terceiros para o Tasy, o sistema proprietário da Phillips. Um dos meus maiores desafios foi compreender esse novo sistema, pois fui encarregado da migração de todas as tabelas e arquivos CSV do sistema antigo para o novo ambiente baseado em Oracle. Isso envolveu tanto trabalho manual quanto a criação de otimizações para facilitar a migração.</p> <p>Essa experiência ampliou significativamente minha visão profissional e me permitiu desenvolver habilidades valiosas não apenas em desenvolvimento de software, mas também em gestão de projetos, resolução de problemas e comunicação interdisciplinar.</p>",
+    "logo": "klini.png",
+    "techs": ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"]
+  },
+  {
+    "name": "docfacil",
+    "title": "Doc Fácil",
+    "description": "<p>Projeto desenvolvido em parceria com um amigo que teve a ideia de automatizar o gerenciamento de informações de usuários que possuem CNPJ (MEI/ME). A proposta era criar um sistema que centralizasse documentos emitidos pelo CNPJ, como DAS e IRPF, entre outros. Além disso, visava facilitar o gerenciamento de clientes e serviços, proporcionando um controle mais eficiente para pequenas e médias empresas.<p> <p>Interessado em adquirir experiência com a tecnologia Node.js, aceitei fazer parte desse desafio, mesmo sem conhecimento prévio da tecnologia. Iniciei o projeto criando um MVP do sistema, desenvolvendo uma API para cada método responsável pelo controller. Como não havia um prazo definido para entrega e devido à minha experiência com <strong>Laravel</strong>, optei por seguir a arquitetura <strong>MVC</strong> e atingir <strong>60% de cobertura de testes</strong> utilizando <strong>TDD</strong>. Além disso, utilizei TypeScript como superset e usei Firebase para armazenamento de documentos e imagens, além da criação do ambiente em <strong>Docker</strong> para rodar o <strong>Node.js</strong> e o banco de dados <strong>Postgres</strong>.</p> <p>A experiência foi muito enriquecedora e contribuiu significativamente para o meu conhecimento. O Node.js agora faz parte know how.</p>",
+    "logo": "doc.png",
+    "techs": ["Node Js", "Express", "Postgres", "JavaScript", "Typescript", "JIT", "Docker"]
+  },
+  {
+    "name": "comuna",
+    "title": "Comuna",
+    "description": "<p>Comuna é um projeto pessoal que nasceu com o objetivo de ajudar pessoas que moram em comunidades do Rio de Janeiro. Onde o objetivo é indicar para o morador o que está ocorrendo na comunidade, como eventos, festas, reuniões, entre outros. Além disso, o projeto visa ajudar os moradores a se conectarem com outros moradores, facilitando a comunicação e a interação entre eles.</p> <p>Este projeto nasceu como <strong>MVP</strong> desenvolvido com <strong>Laravel</strong>, <strong>MySQL</strong> no seu back end e como era necessário enviar notificações para o usuário, optei por usar o <strong>React Native</strong> e <strong>TypeScript</strong> por causa da curva de aprendizado e facilidade no desenvolvimento.</p> <p>Para autentificação e gerenciamento de estado foi usado o <strong>Google Auth</strong> e <strong>Redux</strong>, assim conseguiria tornar mais fácil o login por parte do usuário, gerando uma credibilidade, sem precisar de login e senha.</p>",
+    "logo": "comuna.png",
+    "techs": ["Laravel 8", "MySQL", "PHP", "React Native", "Google Auth", "Typescript", "JavaScript", "Docker"]
+  }
+]

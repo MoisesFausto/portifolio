@@ -12,9 +12,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="/card-site.jpg" />
-    <meta name="keywords" content="full stack developer, php, vue, laravel">
+    <meta name="keywords" content="fullstack developer, php, vue, laravel">
 
-  <link rel="apple-touch-startup-image" href="/card-site.jpg">
+    <link rel="apple-touch-startup-image" href="/card-site.jpg">
     <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Moisés Fausto | Full Stack Developer | PHP | Laravel | Vue Js activity feed" />
     
     <meta property="og:image:width" content="1080">
@@ -25,50 +25,69 @@
     <link rel="shortcut icon" sizes="1050x1050" href="/assets/icons/logo.png">
     <link rel="apple-touch-icon" sizes="1050x1050" href="/assets/icons/logo.png">
 
-    <link rel="stylesheet" href="/build/css/app.css"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+  
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="/assets/lib/slick/slick.css" rel="stylesheet">
+    <link href="/assets/lib/slick/slick-theme.css" rel="stylesheet">
 
-        
+        <link rel="stylesheet" href="/build/css/app.css"/>
+    
         <script src="https://kit.fontawesome.com/0d061613ad.js" crossorigin="anonymous"></script>
     </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-<header class="bg-white shadow-md">
-    <nav class="bg-white dark:bg-gray-900 border-gray-200">
-        <div class="container flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="/" aria-label="Home" class="text-xl font-bold text-gray-800">
-                <img src="/assets/images/logo.png" alt="Moisés Fausto" class="w-16 h-16 rounded-full object-cover mx-auto border-4 border-white dark:bg-gray-900 shadow-lg">
-            </a>
-            <button id="menu-collapse" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false" title="menu" aria-label="menu">
-                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul class="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-900">
-                    <li>
-                        <a href="/#home" aria-label="Home" class="hidden text-gray-600 dark:text-white hover:text-gray-800 transition duration-300" aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="/#about" aria-label="Sobre" class="hidden text-gray-600 dark:text-white hover:text-gray-800 transition duration-300">Sobre</a>
-                    </li>
-                    <li>
-                        <a href="/#services" aria-label="Serviços" class="hidden text-gray-600 dark:text-white hover:text-gray-800 transition duration-300">Serviços</a>
-                    </li>
-                    <li>
-                        <a href="/#works" class="hidden text-gray-600 dark:text-white hover:text-gray-800 transition duration-300">Trabalhos</a>
-                    </li>
-                    <li>
-                        <a href="/#contact" aria-label="Contato" class="hidden text-gray-600 dark:text-white hover:text-gray-800 transition duration-300">Contato</a>
-                    </li>
-                                        <li>
-                      <a href="/" aria-label="Home" class="bg-orange-600 py-1.5 px-2.5 rounded text-white dark:text-white hover:bg-orange-700 transition duration-300">Home</a>
-                    </li>
-                                    </ul>
-            </div>
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+<div class="wrapper">
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <img src="/assets/images/logo.png" alt="Moisés Fausto">
+    </div>
+    <div class="sidebar-content">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a href="#" class="navbar-brand"><img width="30px" src="/assets/images/logo.png" alt="Moisés Fausto"></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/#header">Home<i class="fa fa-home"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#about">Sobre<i class="fa fa-address-card"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#experience">Experiências<i class="fa fa-star"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#service">Serviços<i class="fa fa-tasks"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#portfolio">Portfólio<i class="fa fa-file-archive"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contact">Contato<i class="fa fa-envelope"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/">Blog<i class="fas fa-thumbtack"></i></a>
+            </li>
+          </ul>
         </div>
-    </nav>
-</header>
+      </nav>
+    </div>
+    <div class="sidebar-footer">
+      <a class="btn" href="https://beacons.ai/moisesfausto"><i class="fas fa-link"></i></a>
+      <a class="btn" href="https://www.linkedin.com/in/moisesfausto/"><i class="fab fa-linkedin-in"></i></a>
+      <a class="btn" href="https://gitlab.com/moisesfausto"><i class="fab fa-github"></i></a>
+    </div>
+  </nav>
 
-<main>
+  <div class="content">
+    <main>
             <h1>Arquiteture</h1>
 <ul>
             <li><a href="/blog/2023/03/31/id-sequencial-vs-uuid-em-sql-qual-e-o-melhor-identificador-para-sua-tabela">ID Sequencial vs. UUID em SQL: qual é o melhor identificador para sua tabela?</a></li>
@@ -77,14 +96,51 @@
 
 <nav>
     </nav>
-    </main>
+          </main>
+  
+    <footer class="footer">
+      <div class="content-inner">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <p>&copy; <span id="current-year"></span> Moisés Fausto. All rights reserved. <a
+              class="d-none" aria-label="RSS" href="/atom.xml">RSS</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
 
-<footer class="bg-orange-600 text-white py-4">
-    <div class="container mx-auto px-6 text-center">
-        <p>&copy; <span id="current-year"></span> Moisés Fausto. All rights reserved. <a class="hidden" aria-label="RSS" href="/atom.xml">RSS</a></p>
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modaLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fa fa-times"></i></span>
+        </button>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer"></div>
     </div>
-</footer>
+  </div>
+</div>
+<!-- Modal -->
 
+<a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/lib/easing/easing.min.js"></script>
+<script src="/assets/lib/slick/slick.min.js"></script>
+<script src="/assets/lib/typed/typed.min.js"></script>
+<script src="/assets/lib/waypoints/waypoints.min.js"></script>
+<script src="/assets/lib/isotope/isotope.pkgd.min.js"></script>
+
+<!-- Template Javascript -->
 <script type="text/javascript" src="/build/js/app.js"></script>
 
 
