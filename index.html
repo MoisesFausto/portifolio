@@ -12,9 +12,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="/card-site.jpg" />
-    <meta name="keywords" content="full stack developer, php, vue, laravel">
+    <meta name="keywords" content="fullstack developer, php, vue, laravel">
 
-  <link rel="apple-touch-startup-image" href="/card-site.jpg">
+    <link rel="apple-touch-startup-image" href="/card-site.jpg">
     <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Moisés Fausto | Full Stack Developer | PHP | Laravel | Vue Js activity feed" />
     
     <meta property="og:image:width" content="1080">
@@ -25,315 +25,536 @@
     <link rel="shortcut icon" sizes="1050x1050" href="/assets/icons/logo.png">
     <link rel="apple-touch-icon" sizes="1050x1050" href="/assets/icons/logo.png">
 
-    <link rel="stylesheet" href="/build/css/app.css"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+  
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="/assets/lib/slick/slick.css" rel="stylesheet">
+    <link href="/assets/lib/slick/slick-theme.css" rel="stylesheet">
 
-        
+        <link rel="stylesheet" href="/build/css/app.css"/>
+    
         <script src="https://kit.fontawesome.com/0d061613ad.js" crossorigin="anonymous"></script>
     </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-<header class="bg-white shadow-md">
-    <nav class="bg-white dark:bg-gray-900 border-gray-200">
-        <div class="container flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="/" aria-label="Home" class="text-xl font-bold text-gray-800">
-                <img src="/assets/images/logo.png" alt="Moisés Fausto" class="w-16 h-16 rounded-full object-cover mx-auto border-4 border-white dark:bg-gray-900 shadow-lg">
-            </a>
-            <button id="menu-collapse" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false" title="menu" aria-label="menu">
-                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul class="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-900">
-                    <li>
-                        <a href="/#home" aria-label="Home" class="hidden text-gray-600 dark:text-white hover:text-gray-800 transition duration-300" aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="/#about" aria-label="Sobre" class="hidden text-gray-600 dark:text-white hover:text-gray-800 transition duration-300">Sobre</a>
-                    </li>
-                    <li>
-                        <a href="/#services" aria-label="Serviços" class="hidden text-gray-600 dark:text-white hover:text-gray-800 transition duration-300">Serviços</a>
-                    </li>
-                    <li>
-                        <a href="/#works" class="hidden text-gray-600 dark:text-white hover:text-gray-800 transition duration-300">Trabalhos</a>
-                    </li>
-                    <li>
-                        <a href="/#contact" aria-label="Contato" class="hidden text-gray-600 dark:text-white hover:text-gray-800 transition duration-300">Contato</a>
-                    </li>
-                                        <li>
-                        <a href="/posts/" aria-label="Posts" class="bg-orange-600 py-1.5 px-2.5 rounded text-white dark:text-white hover:bg-orange-700 transition duration-300">Blog</a>
-                    </li>
-                                    </ul>
-            </div>
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+<div class="wrapper">
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <img src="/assets/images/logo.png" alt="Moisés Fausto">
+    </div>
+    <div class="sidebar-content">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a href="#" class="navbar-brand"><img width="30px" src="/assets/images/logo.png" alt="Moisés Fausto"></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/#header">Home<i class="fa fa-home"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#about">Sobre<i class="fa fa-address-card"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#experience">Experiências<i class="fa fa-star"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#service">Serviços<i class="fa fa-tasks"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#portfolio">Portfólio<i class="fa fa-file-archive"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contact">Contato<i class="fa fa-envelope"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/">Blog<i class="fas fa-thumbtack"></i></a>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </nav>
+    </div>
+    <div class="sidebar-footer">
+      <a class="btn" href="https://beacons.ai/moisesfausto"><i class="fas fa-link"></i></a>
+      <a class="btn" href="https://www.linkedin.com/in/moisesfausto/"><i class="fab fa-linkedin-in"></i></a>
+      <a class="btn" href="https://gitlab.com/moisesfausto"><i class="fab fa-github"></i></a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <main>
+            <!-- Header Start -->
+<header class="header" id="header">
+  <div class="content-inner">
+    <p>Olá, eu sou</p>
+    <h1>Moisés Fausto</h1>
+    <h2></h2>
+    <div class="typed-text">Web Developer, Front End Developer, Back End Developer</div>
+  </div>
 </header>
+<!-- Header End -->
 
-<main>
-            <section id="home" class="bg-gradient-to-r from-orange-500 to-orange-800 text-white py-20">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-8 md:mb-0">
-            <h1 class="text-4xl md:text-5xl font-bold mb-2">Moisés Fausto</h1>
-            <p class="text-xl mb-2">Full Stack Developer | PHP | Laravel | Vue Js </p>
-            <p class="text-md mb-2">Desenvolvedor Full Stack a mais de <span id="exp"></span>, desenvolvendo soluções para empresas e projetos</p>
-            <ul class="flex items-center gap-2.5 mb-10">
-              <li><a href="https://gitlab.com/moisesfausto" target="_blank" aria-label="Gitlab" class="text-gray-200 hover:text-gray-600">
-                <i class="fab fa-github text-2xl"></i>
-              </a></li>
-              <li><a href="https://beacons.ai/moisesfausto" target="_blank" aria-label="Centralizador de Links - Beacons.ai" class="text-gray-200 hover:text-gray-600">
-                <i class="fas fa-link text-2xl"></i>
-              </a></li>
-              <li><a href="mailto:moisesfaustoo@gmail.com" target="_blank" aria-label="email" class="text-gray-200 hover:text-gray-600">
-                <i class="far fa-envelope text-2xl"></i></a></li>            
-            </ul>
-            <a href="https://www.linkedin.com/in/moisesfausto/" aria-label="Linkedin" target="_blank" class="bg-white text-gray-600 py-4 px-6 rounded font-bold hover:bg-gray-100 transition duration-300">Saiba Mais</a>
-        </div>
-        <div class="md:w-1/2">
-            <img src="/assets/images/perfil-pessoal.png" alt="Moisés Fausto" class="rounded-full w-64 h-64 object-cover mx-auto border-4 border-white shadow-lg hidden md:flex">
-        </div>
+<!-- Large Button Start -->
+<div class="large-btn">
+  <div class="content-inner">
+    <a class="btn" href download="/assets/pdf/br_curriculo-moises-fausto-da-silva.pdf"
+       aria-label="Download Currículo"><i class="fa fa-download"></i>Curriculo</a>
+    <a class="btn" href="https://www.linkedin.com/in/moisesfausto/"><i
+      class="fa fa-hands-helping"></i>Saiba mais</a>
+
+  </div>
+</div>
+<!-- Large Button End -->
+
+<!-- About Start -->
+<section class="about" id="about">
+  <div class="content-inner">
+    <div class="content-header">
+      <h2>Sobre Mim</h2>
     </div>
+    <div class="row align-items-center">
+      <div class="col-md-6 col-lg-5">
+        <img src="/assets/images/perfil-pessoal.png" alt="Moisés Fausto">
+      </div>
+      <div class="col-md-6 col-lg-7">
+        <p>
+          Sou desenvolvedor fullstack há <span id="exp"></span>, especializado em <strong>PHP/Laravel</strong> e
+          <strong>Vue</strong>. Além disso, trabalho
+          em projetos mobile para iOS e Android usando <strong>React Native</strong> e desenvolvo
+          soluções pessoais
+          com <strong>Node.js</strong>, <strong>React</strong> e <strong>Firebase</strong>. Sempre
+          busco aplicar boas práticas de desenvolvimento,
+          priorizando testes para garantir a qualidade das minhas entregas.
+        </p>
+        <div class="d-flex justify-content-between flex-wrap mb-4 skils">
+          <i class="fab fa-php text-[#5A6598]" title="PHP"></i>
+          <i class="fab fa-vuejs text-[#3FB27F]" title="Vue js"></i>
+          <i class="fab fa-laravel text-[#F13C2F]" title="Laravel"></i>
+          <i class="fab fa-react text-[#48D0F8]" title="React"></i>
+          <i class="fab fa-docker text-[#5E8DEC]" title="Docker"></i>
+          <i class="fas fa-database text-[#3E6E93]" title="Banco de Dados"></i>
+          <i class="fab fa-wordpress text-[#1E1E1E]" title="Wordpress"></i>
+          <i class="fab fa-html5 text-[#EB6227]" title="HTML5"></i>
+          <i class="fab fa-css3 text-[#3D96D1]" title="CSS3"></i>
+          <i class="fab fa-figma text-[#EC4C1E]" title="Figma"></i>
+          <i class="fab fa-linux text-orange-700" title="Linux"></i>
+          <i class="fab fa-node-js text-[#67A356]" title="Node js"></i>
+        </div>
+        <a class="btn" href="https://www.linkedin.com/in/moisesfausto/">Saiba mais</a>
+      </div>
+    </div>
+    <div class="row d-none">
+      <div class="col-md-12">
+        <div class="skills">
+          <div class="skill-name">
+            <i class="fab fa-wordpress text-[#1E1E1E]" title="Wordpress"></i>
+            <i class="fab fa-html5 text-[#EB6227]" title="HTML5"></i>
+            <i class="fab fa-css3 text-[#3D96D1]" title="CSS3"></i>
+            <i class="fab fa-figma text-[#EC4C1E]" title="Figma"></i>
+            <i class="fab fa-linux text-orange-700" title="Linux"></i>
+            <i class="fab fa-react text-[#48D0F8]" title="React"></i>
+            <i class="fab fa-php text-[#5A6598]" title="PHP"></i>
+            <i class="fab fa-laravel text-[#F13C2F]" title="Laravel"></i>
+            <i class="fab fa-node-js text-[#67A356]" title="Node js"></i>
+            <i class="fab fa-vuejs text-[#3FB27F]" title="Vue js"></i>
+            <i class="fas fa-database text-[#3E6E93]" title="Banco de Dados"></i>
+            <i class="fab fa-docker text-[#5E8DEC]" title="Docker"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+<!-- About End -->
 
-<section id="about" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8 text-center">So<span class="border-b-2 border-orange-600">bre mi</span>m</h2>
-        <div class="flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-8 md:mb-0 overflow-hidden">
-                <div class="flex justify-between item-center mb-5">
-                    <i class="fab fa-wordpress text-4xl text-[#1E1E1E]" title="Wordpress"></i>
-                    <i class="fab fa-html5 text-4xl text-[#EB6227]" title="HTML5"></i>
-                    <i class="fab fa-css3 text-4xl text-[#3D96D1]" title="CSS3"></i>
-                    <i class="fab fa-figma text-4xl text-[#EC4C1E]" title="Figma"></i>
-                    <i class="fab fa-linux text-4xl text-orange-700" title="Linux"></i>
-                    <i class="fab fa-react text-4xl text-[#48D0F8]" title="React"></i>
-                </div>
-                <img src="/assets/images/background-home.jpg" alt="Sobre Moisés Fausto" class="rounded-lg shadow-lg">
-                <div class="flex justify-between item-center mt-5">
-                    <i class="fab fa-php text-4xl text-[#5A6598]" title="PHP"></i>
-                    <i class="fab fa-laravel text-4xl text-[#F13C2F]" title="Laravel"></i>
-                    <i class="fab fa-node-js text-4xl text-[#67A356]" title="Node js"></i>
-                    <i class="fab fa-vuejs text-4xl text-[#3FB27F]" title="Vue js"></i>
-                    <i class="fas fa-database text-4xl text-[#3E6E93]" title="Banco de Dados"></i>
-                    <i class="fab fa-docker text-4xl text-[#5E8DEC]" title="Docker"></i>
-                </div>
-            </div>
-            <div class="md:w-1/2 md:pl-12">
-                <p class="text-base mb-2">Sou desenvolvedor full stack, especializado em <strong>PHP/Laravel</strong> e <strong>Vue</strong>. Além disso, trabalho em projetos mobile para iOS e Android usando <strong>React Native</strong> e desenvolvo soluções pessoais com <strong>Node.js</strong>, <strong>React</strong> e <strong>Firebase</strong>. Sempre busco aplicar boas práticas de desenvolvimento, priorizando testes para garantir a qualidade das minhas entregas.</p>
-                <p class="text-base mb-2">Iniciei minha carreira em uma agência de marketing digital, onde trabalhei extensivamente com <strong>Wordpress</strong> e <strong>PHP</strong>. Essa experiência me proporcionou um conhecimento valioso no setor de marketing, que enriqueceu tanto meu crescimento profissional quanto pessoal.</p>
-                <p class="text-base mb-8">Atualmente, atuo como engenheiro de software em uma empresa de outsourcing de médio porte, onde tenho a oportunidade de trabalhar em uma ampla variedade de projetos. No meu dia a dia, utilizo tecnologias como <strong>Laravel</strong>, <strong>Vue</strong>, <strong>Docker</strong> e <strong>AWS</strong>, sempre em colaboração com equipes multifuncionais e dentro de metodologias ágeis. Essa diversidade de experiências tem sido fundamental para expandir continuamente meu conhecimento técnico e aprimorar minhas habilidades de trabalho em equipe.</p>
-                <a href download="/assets/pdf/br_curriculo-moises-fausto-da-silva.pdf" aria-label="Download Currículo" class="w-full md:w-40 flex justify-center items-center gap-3 bg-orange-600 text-white py-2 px-2 rounded font-bold hover:bg-orange-700 transition duration-300"><i class="far fa-arrow-alt-circle-down text-2xl"></i> Currículo</a>
-            </div>
-        </div>
+<!-- Experience Start -->
+<section class="experience" id="experience">
+  <div class="content-inner">
+    <div class="content-header">
+      <h2>Experiências</h2>
     </div>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="exp-col">
+          <span>Fev-2022 <i>-</i> Atual</span>
+          <h3>TO Brasil</h3>
+          <h4>Rio de Janeiro, Brasil</h4>
+          <h5>Software Engineer</h5>
+          <p>Atuação como desenvolvedor fullstack utilizando <strong>Laravel</strong>,
+            <strong>MariaDB</strong>, <strong>Docker</strong>, <strong>Vue.js 3</strong>,
+            <strong>Vuetify</strong>, <strong>TypeScript</strong>, <strong>Composition
+              API</strong>, <strong>React</strong>, <strong>React Native</strong>,
+            <strong>AWS</strong> e <strong>Figma</strong>. Responsável pela criação,
+            implementação e refatoração de telas e funcionalidades sob demanda do gestor do
+            projeto que adotou com sucesso a metodologia Scrum com sprint e reuniões diárias.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="exp-col">
+          <span>Nov-2023 <i>-</i> Jan-2025</span>
+          <h3>Infoconsig</h3>
+          <h4>Santa Catarina, Brasil</h4>
+          <h5>Front End Sênior</h5>
+          <p>Como desenvolvedor front-end sênior, usando as tecnologias <strong>Vue 3</strong>,
+            <strong>TypeScript</strong>, <strong>Pinia</strong>, <strong>Composion API</strong>.
+            iderando o projeto na implementação de telas críticas e complexas, garantindo
+            conformidade com normativas contratuais e mantendo altos padrões de qualidade de
+            software por meio de testes rigorosos e metodologias de código.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="exp-col">
+          <span>Abr-2021 <i>-</i> Jan-2022</span>
+          <h3>Klini</h3>
+          <h4>Rio de Janeiro, Brasil</h4>
+          <h5>Desenvolvedor Fullstack</h5>
+          <p>Responsável pelo desenvolvimento de novas funcionalidades e manutenção do sistema
+            legado de venda online/cotação de planos de saúde. Criação de uma intranet para a
+            empresa e desenvolvimento de uma API com <strong>Bootstrap</strong>,
+            <strong>Jquery</strong>, <strong>Laravel</strong>, <strong>PHP</strong> e
+            <strong>MySQL</strong> para comunicação com o aplicativo mobile utilizado pela
+            equipe externa.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="exp-col">
+          <span>Dez-2018 <i>-</i> Mar-2021</span>
+          <h3>Tsuru Agência Digital</h3>
+          <h4>Rio de Janeiro, Brasil</h4>
+          <h5>Desenvolvedor Fullstack</h5>
+          <p>Desenvolvimento, implementação e manutenção de sites utilizando <strong>PHP</strong>,
+            <strong>WordPress</strong>, HTML, CSS, JS, <strong>Jquery</strong> e
+            <strong>Bootstrap</strong>. Criação de e-mails marketing/newsletters em HTML e CSS,
+            seguindo as metodologias da empresa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+<!-- Experience Start -->
 
-<section id="services" class="py-20 bg-[#242424]">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl text-white font-bold mb-8 text-center"><span class="border-b-2 border-orange-600">Servi</span>ços</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-                <svg class="w-12 h-12 text-orange-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                <h3 class="text-xl font-semibold mb-2">Desenvolvimento Web</h3>
-                <p class="text-gray-600">Aplicativos web personalizados adaptados as necessidades e requisitos específicos.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-                <svg class="w-12 h-12 text-orange-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                <h3 class="text-xl font-semibold mb-2">Desenvolvimento de Apps</h3>
-                <p class="text-gray-600">Aplicativos móveis intuitivos e responsivos para plataformas iOS e Android.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
-                <svg class="w-12 h-12 text-orange-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
-                <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
-                <p class="text-gray-600">Soluções de design centradas no usuário que melhoram a experiência e a satisfação do usuário.</p>
-            </div>
-        </div>
+<!-- Service Start -->
+<section class="service" id="service">
+  <div class="content-inner">
+    <div class="content-header">
+      <h2>O que faço</h2>
     </div>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="srv-col">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+            </path>
+          </svg>
+          <h3>Desenvolvimento Web</h3>
+          <p>Aplicações web personalizados adaptados as necessidades e requisitos específicos.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="srv-col">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z">
+            </path>
+          </svg>
+          <h3>Desenvolvimento de Apps</h3>
+          <p>Aplicativos móveis intuitivos e responsivos para plataformas iOS e Android.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="srv-col">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
+            </path>
+          </svg>
+          <h3>UI/UX Design</h3>
+          <p>Soluções de design centradas no usuário que melhoram a experiência e a satisfação do
+            usuário.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+<!-- Service Start -->
 
-<section id="works" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8 text-center">Proj<span class="border-b-2 border-orange-600">etos</span></h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                <img src="/assets/images/dashboard.jpg" alt="Dashboard Analítico" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Dashboard Analítico</h3>
-                    <p class="text-gray-600 mb-4">Atuação na melhoria, refatoração e desenvolvimento da plataforma na busca de perfomance de um dos maiores logista do Brasil.</p>
-                    <div class="flex justify-start flex-wrap mb-4">
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">PHP</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Laravel</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">MySQL</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Google Cloud Platform</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Javascript</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">...</span>
-                    </div>
-                    <a href="https://www.linkedin.com/in/moisesfausto/details/projects/" aria-label="Ver projeto" target="_blank" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300">
-                        Ver projeto
-                        <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                <img src="/assets/images/microservices.jpg" alt="Serviços de Integração" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Serviços de Integração</h3>
-                    <p class="text-gray-600 mb-4">Manutenção e melhoria de diversos sistemas, os quais são utilizados para entendimento e combate à miséria e a fome.</p>
-                    <div class="flex justify-start flex-wrap mb-4">
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">PHP</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Laravel</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Symfony</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">PostgreSQL</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">RabbitMQ</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">React</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">...</span>
-                    </div>
-                    <a href="https://www.linkedin.com/in/moisesfausto/details/projects/" aria-label="Ver projeto" target="_blank" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300">
-                        Ver projeto
-                        <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                <img src="/assets/images/plataforma.jpg" alt="Plataforma de Bilhetagem" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Plataforma de Bilhetagem</h3>
-                    <p class="text-gray-600 mb-4">Projeto de um grande player do Rio de Janeiro, onde tivemos a responsabilidade de migrar toda a plataforma ERP</p>
-                    <div class="flex justify-start flex-wrap mb-4">
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Vue</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Vuetify</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Pinia</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Typescript</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Figma</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">Swagger</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">AWS</span>
-                        <span class="bg-orange-100 text-gray-600 text-xs font-medium me-2 px-2.5 py-0.5 mb-1 rounded dark:bg-gray-700 dark:text-gray-300">...</span>
-                    </div>
-                    <a href="https://www.linkedin.com/in/moisesfausto/details/projects/" aria-label="Ver projeto" target="_blank" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300">
-                        Ver projeto
-                        <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
+<!-- Portfolio Start -->
+<section class="portfolio" id="portfolio">
+  <div class="content-inner">
+    <div class="content-header">
+      <h2>Portfólio</h2>
     </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul id="portfolio-flters">
+          <li data-filter="*" class="filter-active">Todos</li>
+          <li data-filter=".dev-back">back end</li>
+          <li data-filter=".dev-front">front end</li>
+          <li data-filter=".dev-app">app</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row portfolio-container">
+      <div class="col-lg-4 col-md-6 portfolio-item dev-back">
+        <div class="portfolio-wrap">
+          <figure>
+            <img class="p-4" src="/assets/images/americanas.png" alt="Lasa">
+            <button class="link-preview" data-project="lasa" data-target="#modal"><i
+              class="fa fa-eye"></i></button>
+            <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
+               title="Mais detalhes"><i class="fa fa-link"></i></a>
+            <a class="portfolio-title" href="javascript:void(0)">Lasa <span>Back End</span></a>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item dev-front">
+        <div class="portfolio-wrap">
+          <figure>
+            <img class="p-4" src="/assets/images/infoconsig-logo.webp" alt="Infoconsig">
+            <button class="link-preview" data-project="infoconsig" data-target="#modal"><i class="fa fa-eye"></i></button>
+            <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
+               title="Mais detalhes"><i class="fa fa-link"></i></a>
+            <a class="portfolio-title" href="javascript:void(0)">Infoconsig <span>Front End</span></a>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item dev-back">
+        <div class="portfolio-wrap">
+          <figure>
+            <img class="p-4" src="/assets/images/govbr-logo-large.png" alt="gov.br">
+            <button class="link-preview" data-project="govbr" data-target="#modal"><i class="fa fa-eye"></i></button>
+            <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
+               title="Mais detalhes"><i class="fa fa-link"></i></a>
+            <a class="portfolio-title" href="javascript:void(0)">GOV.BR <span>Back End</span></a>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item dev-front">
+        <div class="portfolio-wrap">
+          <figure>
+            <img class="p-4" src="/assets/images/riocard-logo.png" alt="RioCard+">
+            <button class="link-preview" data-project="riocard"><i class="fa fa-eye"></i></button>
+            <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
+               title="Mais detalhes"><i class="fa fa-link"></i></a>
+            <a class="portfolio-title" href="javascript:void(0)">RioCard+ <span>Front End</span></a>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item dev-front dev-back dev-app">
+        <div class="portfolio-wrap">
+          <figure>
+            <img class="p-4" src="/assets/images/senar-mt-logo.jpg" alt="Senar MT">
+            <button class="link-preview" data-project="senar"><i class="fa fa-eye"></i></button>
+            <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
+               title="Mais detalhes"><i class="fa fa-link"></i></a>
+            <a class="portfolio-title" href="javascript:void(0)">Senar MT <span>Back End & Front End &
+                                          App</span></a>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item dev-back dev-front">
+        <div class="portfolio-wrap">
+          <figure>
+            <img class="p-4" src="/assets/images/klini-logo.webp" alt="Klini">
+            <button class="link-preview" data-project="klini"><i class="fa fa-eye"></i></button>
+            <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
+               title="Mais detalhes"><i class="fa fa-link"></i></a>
+            <a class="portfolio-title" href="javascript:void(0)">Klini <span>Back End & Front End</span></a>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item dev-back">
+        <div class="portfolio-wrap">
+          <figure>
+            <img class="p-4" src="/assets/images/doc-facil.jpeg" alt="Doc Fácil">
+            <button class="link-preview" data-project="docfacil"><i class="fa fa-eye"></i></button>
+            <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
+               title="Mais detalhes"><i class="fa fa-link"></i></a>
+            <a class="portfolio-title" href="javascript:void(0)">Doc Fácil <span>Back End</span></a>
+          </figure>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item dev-back dev-app">
+        <div class="portfolio-wrap">
+          <figure>
+            <img class="p-4" src="/assets/images/comuna.png" alt="Comuna APP">
+            <button class="link-preview" data-project="comuna"><i class="fa fa-eye"></i></button>
+            <a href="https://comuna.app.br/" class="link-details" title="Mais detalhes"><i
+              class="fa fa-link"></i></a>
+            <a class="portfolio-title" href="javascript:void(0)">Comuna APP <span>App</span></a>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+<!-- Portfolio Start -->
 
-<section id="companies" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8 text-center">Emp<span class="border-b-2 border-orange-600">resa</span>s</h2>
-        <div class="flex justify-between items-center gap-11 flex-wrap md:flex-nowrap">
-            <div class="w-full md:w-80 flex items-center">
-                <p class="text-center md:text-left text-3xl">Eu trabalhei com <span class="text-orange-600" id="jobs">10+</span> empresas no Brasil</p>
-            </div>
-            <div class="flex justify-center items-center gap-1 md:gap-5 flex-wrap md:flex-nowrap">
-                <div data-name="lasa" class="branding flex justify-center items-center bg-white border rounded w-[120px] h-[120px] px-6 cursor-pointer">
-                    <svg viewBox="0 0 398.41 83" fill="#f80032" width="127" height="120" class="logo__LasaLogoUI-sc-1c580kb-1 cQhBVW"><path d="M20.56 38.45c1.88-.23 3.22-.53 4.03-.89 1.45-.61 2.18-1.57 2.18-2.87 0-1.58-.56-2.67-1.67-3.27-1.11-.6-2.75-.9-4.9-.9-2.42 0-4.13.59-5.13 1.77-.72.87-1.2 2.05-1.44 3.54H3.9c.21-3.38 1.16-6.15 2.84-8.32 2.68-3.4 7.28-5.1 13.79-5.1 4.24 0 8.01.84 11.3 2.51 3.29 1.68 4.94 4.84 4.94 9.49v17.7c0 1.23.02 2.71.07 4.46.07 1.32.27 2.22.6 2.69.33.47.83.86 1.49 1.17v1.49H27.97c-.31-.78-.52-1.51-.64-2.19-.12-.69-.21-1.46-.28-2.33-1.4 1.51-3.01 2.8-4.84 3.86-2.18 1.25-4.65 1.88-7.41 1.88-3.51 0-6.42-1-8.7-2.99-2.29-1.99-3.44-4.82-3.44-8.48 0-4.74 1.84-8.18 5.53-10.3 2.02-1.16 4.99-1.98 8.91-2.48l3.46-.44zm6.17 4.71c-.65.4-1.3.73-1.96.97-.66.25-1.56.48-2.71.69l-2.3.42c-2.15.38-3.7.84-4.64 1.38-1.59.92-2.38 2.35-2.38 4.28 0 1.72.48 2.97 1.46 3.73.97.77 2.15 1.15 3.54 1.15 2.2 0 4.23-.64 6.09-1.91s2.82-3.6 2.89-6.97l.01-3.74zm67.14-19.68c1.65.66 3.15 1.82 4.5 3.47 1.08 1.35 1.82 3 2.19 4.96.23 1.3.35 3.2.35 5.7l-.07 24.32H90.51V37.36c0-1.46-.24-2.67-.71-3.61-.9-1.79-2.55-2.69-4.96-2.69-2.79 0-4.71 1.16-5.77 3.47-.54 1.23-.81 2.7-.81 4.43v22.97H68.1V38.95c0-2.29-.23-3.95-.71-4.99-.85-1.87-2.51-2.79-4.99-2.79-2.88 0-4.82.93-5.81 2.79-.54 1.06-.81 2.64-.81 4.74v23.22H45.55V23.41h9.8v5.63c1.25-2 2.43-3.43 3.54-4.28 1.96-1.51 4.5-2.27 7.61-2.27 2.95 0 5.33.65 7.15 1.95 1.46 1.2 2.57 2.75 3.33 4.64 1.32-2.26 2.96-3.93 4.92-4.99 2.08-1.06 4.39-1.59 6.94-1.59 1.71-.01 3.38.32 5.03.98m41.6.64c2.69 1.21 4.91 3.11 6.67 5.71 1.58 2.29 2.6 4.95 3.07 7.98.27 1.77.38 4.33.33 7.66h-28.1c.16 3.87 1.5 6.59 4.04 8.14 1.54.97 3.39 1.45 5.56 1.45 2.3 0 4.17-.59 5.6-1.77.78-.64 1.48-1.52 2.08-2.66h10.3c-.27 2.29-1.52 4.61-3.74 6.97-3.46 3.75-8.3 5.63-14.52 5.63-5.13 0-9.67-1.58-13.59-4.75-3.92-3.16-5.89-8.31-5.89-15.45 0-6.68 1.77-11.81 5.32-15.38 3.54-3.57 8.14-5.35 13.8-5.35 3.35.01 6.38.62 9.07 1.82m-15.09 8.71c-1.43 1.47-2.32 3.46-2.69 5.97h17.38c-.18-2.68-1.08-4.71-2.69-6.1s-3.6-2.08-5.98-2.08c-2.59.01-4.6.74-6.02 2.21m51.83-10.39c.13.01.42.03.87.05v10.34c-.64-.07-1.2-.12-1.7-.14s-.9-.04-1.2-.04c-4.06 0-6.78 1.32-8.18 3.97-.78 1.49-1.17 3.78-1.17 6.86v18.44h-10.16V23.34h9.63v6.73c1.56-2.57 2.92-4.33 4.07-5.27 1.89-1.58 4.34-2.37 7.36-2.37.19-.01.35-.01.48.01m7.74.16h10.23v39.32h-10.23zm41.7 14.58c-.19-1.44-.67-2.74-1.46-3.89-1.13-1.56-2.9-2.33-5.29-2.33-3.41 0-5.74 1.69-6.99 5.06-.66 1.79-.99 4.17-.99 7.13 0 2.82.33 5.09.99 6.81 1.21 3.21 3.48 4.81 6.81 4.81 2.37 0 4.04-.63 5.04-1.91.99-1.27 1.6-2.92 1.81-4.96h10.3c-.24 3.07-1.35 5.97-3.33 8.71-3.17 4.41-7.85 6.62-14.07 6.62-6.21 0-10.78-1.84-13.71-5.52-2.93-3.68-4.39-8.46-4.39-14.32 0-6.62 1.62-11.77 4.85-15.45 3.23-3.68 7.7-5.52 13.39-5.52 4.84 0 8.8 1.08 11.89 3.26 3.08 2.17 4.91 6.01 5.47 11.5h-10.32zm32.66 1.27c1.88-.23 3.22-.53 4.03-.89 1.45-.61 2.18-1.57 2.18-2.87 0-1.58-.56-2.67-1.67-3.27-1.11-.6-2.75-.9-4.9-.9-2.42 0-4.13.59-5.13 1.77-.72.87-1.2 2.05-1.44 3.54h-9.73c.21-3.38 1.16-6.15 2.85-8.32 2.68-3.4 7.28-5.1 13.79-5.1 4.24 0 8.01.84 11.3 2.51 3.3 1.68 4.95 4.84 4.95 9.49v17.7c0 1.23.02 2.71.07 4.46.07 1.32.27 2.22.6 2.69.33.47.83.86 1.49 1.17v1.49h-10.98c-.31-.78-.52-1.51-.64-2.19-.12-.69-.21-1.46-.28-2.33-1.4 1.51-3.01 2.8-4.84 3.86-2.18 1.25-4.65 1.88-7.41 1.88-3.51 0-6.41-1-8.7-2.99s-3.44-4.82-3.44-8.48c0-4.74 1.84-8.18 5.53-10.3 2.02-1.16 4.99-1.98 8.92-2.48l3.45-.44zm6.16 4.71c-.64.4-1.3.73-1.96.97-.66.25-1.56.48-2.71.69l-2.3.42c-2.15.38-3.7.84-4.64 1.38-1.59.92-2.38 2.35-2.38 4.28 0 1.72.48 2.97 1.46 3.73.97.77 2.15 1.15 3.54 1.15 2.21 0 4.23-.64 6.09-1.91 1.86-1.27 2.82-3.6 2.89-6.97l.01-3.74zm50.12-17.61c2.53 2.09 3.79 5.55 3.79 10.39v25.98h-10.34V38.45c0-2.03-.27-3.59-.81-4.67-.98-1.98-2.86-2.97-5.62-2.97-3.4 0-5.73 1.45-6.99 4.35-.66 1.54-.99 3.49-.99 5.88v20.89h-10.09V23.41h9.77v5.63c1.29-1.98 2.52-3.41 3.67-4.28 2.07-1.56 4.69-2.34 7.86-2.34 3.98 0 7.23 1.04 9.75 3.13m27.83 12.9c1.88-.23 3.22-.53 4.03-.89 1.45-.61 2.17-1.57 2.17-2.87 0-1.58-.56-2.67-1.67-3.27-1.11-.6-2.75-.9-4.9-.9-2.42 0-4.13.59-5.13 1.77-.72.87-1.2 2.05-1.43 3.54h-9.73c.21-3.38 1.16-6.15 2.84-8.32 2.68-3.4 7.28-5.1 13.79-5.1 4.24 0 8.01.84 11.31 2.51 3.29 1.68 4.94 4.84 4.94 9.49v17.7c0 1.23.02 2.71.07 4.46.07 1.32.27 2.22.6 2.69.33.47.83.86 1.49 1.17v1.49h-10.97c-.31-.78-.52-1.51-.64-2.19-.12-.69-.21-1.46-.28-2.33-1.4 1.51-3.01 2.8-4.84 3.86-2.18 1.25-4.65 1.88-7.41 1.88-3.51 0-6.41-1-8.7-2.99s-3.44-4.82-3.44-8.48c0-4.74 1.84-8.18 5.53-10.3 2.02-1.16 4.99-1.98 8.92-2.48l3.45-.44zm6.17 4.71c-.65.4-1.3.73-1.95.97-.66.25-1.56.48-2.71.69l-2.3.42c-2.15.38-3.7.84-4.64 1.38-1.59.92-2.38 2.35-2.38 4.28 0 1.72.49 2.97 1.46 3.73.97.77 2.15 1.15 3.54 1.15 2.2 0 4.24-.64 6.09-1.91 1.86-1.27 2.82-3.6 2.89-6.97v-3.74zm26.75 6.44c.21 1.79.68 3.07 1.39 3.82 1.26 1.34 3.58 2.02 6.97 2.02 1.99 0 3.57-.29 4.75-.88 1.17-.59 1.76-1.47 1.76-2.66 0-1.13-.47-1.99-1.42-2.58-.94-.59-4.46-1.6-10.55-3.04-4.39-1.09-7.47-2.44-9.27-4.07-1.79-1.61-2.69-3.92-2.69-6.94 0-3.56 1.4-6.62 4.2-9.19 2.8-2.56 6.75-3.84 11.83-3.84 4.82 0 8.76.96 11.79 2.88 3.04 1.92 4.78 5.25 5.23 9.96h-10.09c-.14-1.3-.51-2.32-1.1-3.08-1.11-1.37-3.01-2.06-5.68-2.06-2.2 0-3.77.34-4.7 1.03-.93.68-1.4 1.49-1.4 2.41 0 1.16.5 2 1.49 2.51.99.54 4.5 1.47 10.53 2.8 4.02.94 7.03 2.37 9.04 4.28 1.98 1.93 2.97 4.35 2.97 7.26 0 3.82-1.43 6.94-4.27 9.36-2.85 2.42-7.25 3.63-13.21 3.63-6.08 0-10.56-1.28-13.46-3.84s-4.34-5.82-4.34-9.79h10.23v.01zM2.73 2.49h393v9.92h-393zm0 67.76h393v9.92h-393z"></path></svg>
-                </div>
-                <div data-name="govbr" class="branding flex justify-center items-center bg-white border rounded w-[120px] h-[120px] px-6 cursor-pointer">
-                    <img src="/assets/images/govbr-logo-large.png" alt="Gov Br">
-                </div>
-                <div data-name="riocard" class="branding flex justify-center items-center bg-white border rounded w-[120px] h-[120px] px-6 cursor-pointer">
-                    <img src="/assets/images/riocard-logo.png" alt="RioCard">
-                </div>
-                <div data-name="senar" class="branding flex justify-center items-center bg-white border rounded w-[120px] h-[120px] px-6 cursor-pointer">
-                    <img src="/assets/images/senar-mt-logo.jpg" alt="Senar MT">
-                </div>
-                <div data-name="klini" class="branding flex justify-center items-center bg-white border rounded w-[120px] h-[120px] px-6 cursor-pointer md:hidden">
-                    <img src="/assets/images/klini-logo.webp" alt="Klini Saúde">
-                </div>
-                <a href="https://www.linkedin.com/in/moisesfausto/details/projects/" aria-label="Ver todos os projetos" class="ring-transparent" target="_blank" rel="noopener noreferrer">
-                    <div class="flex justify-center items-center bg-white border rounded w-[120px] h-[120px] px-6">
-                        <i class="fas fa-long-arrow-alt-right text-6xl text-orange-600"></i>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div id="tabs-companies" class="flex justify-end mt-5 relative">
-            <div class="absolute opacity-0 transition duration-300 ease-in p-4 w-full md:w-[70%] h-56 overflow-auto shadow-2xl rounded-lg bg-white border" id="lasa" role="tabpanel" aria-labelledby="lasa-tab">
-                <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900">Portal dos Fornecedores - LASA<span class="bg-orange-100 text-gray-600 text-sm font-medium me-2 px-2.5 py-0.5 rounded ms-3">Atual</span></h3>
-                <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Outubro de 2023 - até o momento</time>
-                <p class="mb-4 text-base font-normaltext-gray-600 dark:text-gray-400">Colaboro com a equipe para otimizar as rotinas do banco de dados e refatorar o sistema <strong>Laravel 5</strong> e <strong>MySQL</strong>, com o objetivo de melhorar o desempenho e reduzir o tempo de resposta do servidor. Isso garante que o impacto para os logistas, que são os usuários finais, seja o mais atualizado possível, com o mínimo de atraso. No início do projeto, o sistema levava em média 27 segundos para carregar a tela com todos os dados. Após um trabalho de refatoração, conseguimos reduzir esse tempo para 3 segundos, melhorando a qualidade e eficiência do código.</p>
-            </div>
-            <div class="absolute opacity-0 transition duration-300 ease-in p-4 w-full md:w-[70%] h-56 overflow-auto shadow-2xl rounded-lg bg-white border" id="govbr" role="tabpanel" aria-labelledby="gobbr-tab">
-                <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900">Ministério da Cidadania</h3>
-                <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Novembro de 2023 à Fevereiro de 2024</time>
-                <p class="mb-4 text-base font-normaltext-gray-600 dark:text-gray-400">Responsável pela manutenção e melhoria de diversos sistemas do governo, os quais são utilizados para entendimento e combate à miséria. São projetos e sistemas que fazem uso de diversos microservices. Nossa prioridade é a melhoria contínua demandada pelo gerente da respectiva área, sempre atentando aos critérios de aprimoramento definidos pelo time de revisão. Nosso trabalho impacta diretamente cidadãos brasileiros que necessitam de tais serviços básicos como prioridade.</p>
-            </div>
-            <div class="absolute opacity-0 transition duration-300 ease-in p-4 w-full md:w-[70%] h-56 overflow-auto shadow-2xl rounded-lg bg-white border" id="riocard" role="tabpanel" aria-labelledby="riocard-tab">
-                <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900">RioCard</h3>
-                <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Janeiro de 2023 à Outubro de 2024</time>
-                <p class="mb-4 text-base font-normaltext-gray-600 dark:text-gray-400">Nesse projeto de um importante provedor de serviços de bilhetagem de transporte do Rio de Janeiro, fui responsável, junto com a equipe de front-end, por migrar o sistema legado para uma nova plataforma, utilizando tecnologias mais performáticas, como <strong>Vue 3, Vuetify, TypeScript, Pinia e AWS</strong>. Em colaboração com o arquiteto e o profissional de UX/UI, desenvolvemos as funcionalidades e componentes para garantir que as telas do Figma fossem o mais perfeitas possível e proporcionassem a melhor experiência ao usuário.</p>
-                <p class="mb-4 text-base font-normaltext-gray-600 dark:text-gray-400">Enfrentamos o desafio de entregar um sistema completo do zero dentro de um prazo apertado, enfrentando também desfalques na equipe durante o processo. No entanto, mesmo com essas dificuldades, conseguimos entregar o sistema completo para o cliente com o mais alto nível de performance.</p>
-            </div>
-            <div class="absolute opacity-0 transition duration-300 ease-in p-4 w-full md:w-[70%] h-56 overflow-auto shadow-2xl rounded-lg bg-white border" id="senar" role="tabpanel" aria-labelledby="senar-tab">
-                <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900">SENAR MT - Colheita de Talentos</h3>
-                <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Fevereiro de 2021 à Fevereiro de 2022</time>
-                <p class="mb-4 text-base font-normaltext-gray-600 dark:text-gray-400">Esse projeto foi uma incrível oportunidade de aprendizado para mim, pois envolveu o desenvolvimento de um sistema de cadastro de vagas e oportunidades para profissionais da área rural. Nele, assumi responsabilidades tanto no backend, utilizando <strong>Laravel 8</strong> e <strong>MariaDB</strong>, quanto no frontend com <strong>Vue 2</strong>.</p>
-                <p class="mb-4 text-base font-normaltext-gray-600 dark:text-gray-400">Mantivemos um ritmo ágil de entregas dentro das sprints, sempre priorizando a performance e a usabilidade para o cliente. Foi gratificante ver o sistema completo sendo entregue dentro do prazo, demonstrando alta qualidade e atendendo às expectativas do cliente. Além disso, o desafio de lidar com as nuances do desenvolvimento tanto no backend quanto no frontend me proporcionou um valioso crescimento profissional e pessoal.</p>
-            </div>
-            <div class="absolute opacity-0 transition duration-300 ease-in p-4 w-full md:w-[70%] h-56 overflow-auto shadow-2xl rounded-lg bg-white border" id="klini" role="tabpanel" aria-labelledby="klini-tab">
-                <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900">Klini Saúde Planos de Sáude</h3>
-                <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Abril de 2021 à Janeiro de 2022</time>
-                <p class="mb-4 text-base font-normaltext-gray-600 dark:text-gray-400">Trabalhar em uma startup foi uma experiência extremamente desafiadora e enriquecedora para mim. Durante esse período, não apenas me concentrei na área de desenvolvimento, mas também mergulhei em diversas outras áreas para compreender as dificuldades e, assim, aprimorar o sistema que tinha como objetivo possibilitar vendas online de planos de saúde.</p>
-                <p class="mb-4 text-base font-normaltext-gray-600 dark:text-gray-400">Além de estar envolvido no desenvolvimento da aplicação, que era baseada em <strong>PHP 7.4</strong> e <strong>MySQL</strong>, enfrentamos o desafio adicional de migrar de um sistema legado de terceiros para o Tasy, o sistema proprietário da Phillips. Um dos meus maiores desafios foi compreender esse novo sistema, pois fui encarregado da migração de todas as tabelas e arquivos CSV do sistema antigo para o novo ambiente baseado em Oracle. Isso envolveu tanto trabalho manual quanto a criação de otimizações para facilitar a migração.</p>
-                <p class="mb-4 text-base font-normaltext-gray-600 dark:text-gray-400">Essa experiência ampliou significativamente minha visão profissional e me permitiu desenvolver habilidades valiosas não apenas em desenvolvimento de software, mas também em gestão de projetos, resolução de problemas e comunicação interdisciplinar.</p>
-            </div>
-        </div>
+<!-- Education Start -->
+<section class="education" id="education">
+  <div class="content-inner">
+    <div class="content-header">
+      <h2>Educação</h2>
     </div>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="edu-col">
+          <span>2019 <i>-</i> 2021</span>
+          <h3>Graduação</h3>
+          <h4>Unisuam</h4>
+          <h5>Análise e desenvolvimento de sistemas</h5>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="edu-col">
+          <span>2016 <i>-</i> 2019</span>
+          <h3>Graduação (incompleta)</h3>
+          <h4>Universidade Federal Fluminense (UFF)</h4>
+          <h5>Sistema para computação</h5>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="edu-col">
+          <span>2014 <i>-</i> 2015</span>
+          <h3>Ensino Técnico</h3>
+          <h4>Centro Politécnico Senac</h4>
+          <h5>Técnico em tecnologia da informação</h5>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="edu-col">
+          <span>2008 <i>-</i> 2011</span>
+          <h3>Ensino Médio</h3>
+          <h4>Colégio Estadual Daltro Santos</h4>
+          <h5>Ensino Médio</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+<!-- Education Start -->
 
-<section id="contact" class="py-20 bg-[#242424]">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl text-white font-bold mb-8 text-center">C<span class="border-b-2 border-orange-600">ontat</span>o</h2>
-        <div class="flex flex-col max-w-lg mx-auto">
-            <div class="space-y-4 self-center">
-                <div class="flex items-center space-x-3">
-                    <div class="bg-white text-orange-600 w-10 h-10 flex justify-center items-center rounded-full">
-                        <i class="far fa-map text-2xl"></i>
-                    </div>
-                    <p class="text-md text-white"><a href="https://maps.app.goo.gl/mk76yo5xVmrbVgN76" aria-label="Maps" target="_blank" rel="noopener noreferrer">Rio de Janeiro - RJ, Brasil</a></p>
-                </div>
-                <div class="flex items-center space-x-3">
-                    <div class="bg-white text-orange-600 w-10 h-10 flex justify-center items-center rounded-full">
-                        <i class="far fa-envelope text-2xl"></i>
-                    </div>
-                    <p class="text-md text-white"><a href="mailto:moisesfaustoo@gmail.com" aria-label="email" target="_blank">moisesfaustoo@gmail.com</a></p>
-                </div>
-                <div class="flex items-center space-x-3 hidden">
-                    <div class="bg-white text-orange-600 w-10 h-10 flex justify-center items-center rounded-full">
-                        <i class="fab fa-whatsapp text-2xl"></i>
-                    </div>
-                    <p class="text-md text-white"><a href="https://api.whatsapp.com/send/?phone=5521979922199" aria-label="telefone" target="_blank">WhatsApp</a></p>
-                </div>
-            </div>
-            <div class="mt-6 flex justify-center space-x-4">
-                <a href="https://www.linkedin.com/in/moisesfausto/" aria-label="linkedin" target="_blank" class="text-orange-600 hover:text-gray-600">
-                    <i class="fab fa-linkedin text-2xl"></i>
-                </a>
-                <a href="https://gitlab.com/moisesfausto" target="_blank" aria-label="Gitlab" class="text-orange-600 hover:text-gray-600">
-                    <i class="fab fa-github text-2xl"></i>
-                </a>
-                <a href="https://beacons.ai/moisesfausto" target="_blank" aria-label="Centralizador de Links - Beacons.ai" class="text-orange-600 hover:text-gray-600">
-                    <i class="fas fa-link text-2xl"></i>
-                </a>
-            </div>
+<!-- Contact Start -->
+<section class="contact" id="contact">
+  <div class="content-inner">
+    <div class="content-header">
+      <h2>Contato</h2>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="contact-info">
+          <p><i class="fa fa-user"></i>Moisés Fausto</p>
+          <p><i class="fa fa-tag"></i>Fullstack Developer</p>
+          <p><i class="fa fa-envelope"></i><a
+            href="mailto:moisesfaustoo@gmail.com">moisesfaustoo@gmail.com</a></p>
+          <p class="d-none"><i class="fa fa-phone"></i><a href="#">(21) 9 1234-5678</a>
+          </p>
+          <p><i class="fa fa-map-marker"></i>Rio de Janeiro, RJ - Brasil</p>
+          <div class="social">
+            <a class="btn" href="https://beacons.ai/moisesfausto"><i
+              class="fas fa-link"></i></a>
+            <a class="btn" href="https://www.linkedin.com/in/moisesfausto/"><i
+              class="fab fa-linkedin-in"></i></a>
+            <a class="btn" href="https://gitlab.com/moisesfausto"><i
+              class="fab fa-github"></i></a>
+          </div>
         </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form">
+          <form>
+            <div id="message-feedback" class="mb-1"></div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" id="name" class="form-control" placeholder="Seu nome" />
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" id="email" class="form-control" placeholder="*Seu e-mail" />
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" class="form-control" placeholder="Do que se trata?" />
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="message" rows="5" placeholder="*Bora bater um papo..."></textarea>
+            </div>
+            <div>
+              <button type="button" id="btnSendMessage" class="btn">Enviar</button>
+            </div>            
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
+  <!-- Contact End -->
 
-    </main>
+          </main>
+  
+    <footer class="footer">
+      <div class="content-inner">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <p>&copy; <span id="current-year"></span> Moisés Fausto. All rights reserved. <a
+              class="d-none" aria-label="RSS" href="/atom.xml">RSS</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
 
-<footer class="bg-orange-600 text-white py-4">
-    <div class="container mx-auto px-6 text-center">
-        <p>&copy; <span id="current-year"></span> Moisés Fausto. All rights reserved. <a class="hidden" aria-label="RSS" href="/atom.xml">RSS</a></p>
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modaLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fa fa-times"></i></span>
+        </button>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer"></div>
     </div>
-</footer>
+  </div>
+</div>
+<!-- Modal -->
 
+<a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/lib/easing/easing.min.js"></script>
+<script src="/assets/lib/slick/slick.min.js"></script>
+<script src="/assets/lib/typed/typed.min.js"></script>
+<script src="/assets/lib/waypoints/waypoints.min.js"></script>
+<script src="/assets/lib/isotope/isotope.pkgd.min.js"></script>
+
+<!-- Template Javascript -->
 <script type="text/javascript" src="/build/js/app.js"></script>
 
 

@@ -1,144 +1,223 @@
-require('./nav');
+(function ($) {
+  "use strict";
 
-const date = new Date;
-const currentYear = date.getFullYear()
+  // Smooth scrolling on the navbar links
+  $(".navbar-nav a").on('click', function (event) {
+    if (this.hash !== "") {
+      event.preventDefault();
 
-// Bloco Home
-const exp = document.getElementById('exp')
-const expTot =  currentYear - 2018;
-if(exp) exp.innerText = `${expTot} anos`
+      $('html, body').animate({
+        scrollTop: $(this.hash).offset().top - 30
+      }, 1500, 'easeInOutExpo');
 
-// Bloco Footer
-if (currentYear === 2024)
-    document.getElementById('current-year').innerText = currentYear
-else
-    document.getElementById('current-year').innerText = `2024 - ${currentYear}`
-
-
-// Menu
-const menuBtn = document.getElementById('menu-collapse')
-const navbar = document.getElementById('navbar-default')
-menuBtn.addEventListener('click', () => {
-    navbar.classList.toggle('hidden')
-})
-
-// Limite de texto
-const descriptions = document.querySelectorAll('#description')
-if (descriptions.length) {
-    descriptions.forEach(description => {
-        if (description.innerText.length >= 94) description.innerText = `${description.innerText.slice(0, 94)}...`
-    })
-}
-
-// Incrementa Jobs
-const jobs = document.getElementById('jobs');
-window.addEventListener('scroll', () => {
-    if (jobs && jobs.getBoundingClientRect().y >= 970) {
-        let count = 0;
-        const interval = setInterval(() => {
-            count = count + 1;
-            jobs.innerText = `${count}+`;
-
-            if (count === 10) clearInterval(interval);
-        }, 150);
+      if ($(this).parents('.navbar-nav').length) {
+        $('.navbar-nav .active').removeClass('active');
+        $(this).closest('a').addClass('active');
+      }
     }
-})
+  });
 
-const tagsPreCode = () => {
-    tagCodes = document.querySelectorAll('code')
+
+  // Typed Initiate
+  if ($('.header h2').length == 1) {
+    const typed_strings = $('.header .typed-text').text();
+    const typed = new Typed('.header h2', {
+      strings: typed_strings.split(', '),
+      typeSpeed: 100,
+      backSpeed: 20,
+      smartBackspace: false,
+      loop: true
+    });
+  }
+
+
+  // Porfolio isotope and filter
+  const portfolioIsotope = $('.portfolio-container').isotope({
+    itemSelector: '.portfolio-item',
+    layoutMode: 'fitRows'
+  });
+
+  $('#portfolio-flters li').on('click', function () {
+    $("#portfolio-flters li").removeClass('filter-active');
+    $(this).addClass('filter-active');
+
+    portfolioIsotope.isotope({filter: $(this).data('filter')});
+  });
+
+
+  // Review slider
+  $('.review-slider').slick({
+    autoplay: true,
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  });
+
+
+  // Current Year in the Footer
+  const currentYear = new Date().getFullYear();
+
+  if (currentYear === 2024)
+    document.getElementById('current-year').innerText = currentYear;
+  else
+    document.getElementById('current-year').innerText = "2024 - ".concat(currentYear);
+
+  // Years of Experience
+  const experience = document.getElementById('exp');
+  const experienceTotal = currentYear - 2018;
+  if (experience) experience.innerText = "".concat(experienceTotal, " anos");
+
+
+
+  // Open Modal with the project details
+  const btnOpenModal = document.querySelectorAll('.link-preview');
+
+  fetch('/projects.json')
+    .then(response => response.json())
+    .then((data) => openModalProjects(data))
+    .catch(error => console.error(error));
+
+  function openModalProjects(data) {
+    btnOpenModal.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalTitle = document.querySelector('.modal-title');
+        const modalBody = document.querySelector('.modal-body');
+        const modalFooter = document.querySelector('.modal-footer');
+
+        // Clear the modal content
+        modalFooter.innerHTML = '';
+
+        data.forEach(project => {
+          if (project.name.toLocaleLowerCase() === btn.dataset.project.toLocaleLowerCase()) {
+            modalTitle.innerText = project.title;
+            modalBody.innerHTML = project.description;
+
+            project.techs.forEach(tech => {
+              modalFooter.innerHTML += `<span class="badge badge-secondary">${tech}</span>`;
+            })
+          }
+        });
+
+        $('#modal').modal('show');
+      });
+    })
+  }
+  
+  // Limit Text in Blog description
+  const descriptions = document.querySelectorAll('#description')
+  if (descriptions.length) {
+    descriptions.forEach(description => {
+      if (description.innerText.length >= 94) description.innerText = `${description.innerText.slice(0, 94)}...`
+    })
+  }
+
+  const tagsPreCode = () => {
+    const tagCodes = document.querySelectorAll('code')
 
     if (tagCodes) {
-        tagCodes.forEach(code => {
-            code.innerHTML = `<div class="flex items-center gap-1.5 mb-4"> 
-                                <div class="w-3 h-3 rounded-full bg-[#F77963]"></div> 
-                                <div class="w-3 h-3 rounded-full bg-[#F89B4A]"></div> 
-                                <div class="w-3 h-3 rounded-full bg-[#41C662]"></div> 
+      tagCodes.forEach(code => {
+        code.innerHTML = `<div class="menu-code d-flex align-items-center mb-3"> 
+                                <div class="menu-close rounded-circle"></div> 
+                                <div class="menu-minimize rounded-circle"></div> 
+                                <div class="menu-maximize rounded-circle"></div> 
                               </div>` + code.innerHTML;
-        })
+      })
     }
-}
+  }
 
-// Easter Egg
-const loading = () => {
-    let pipe = []
-    let count = 0
+  // Back to top button
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('.back-to-top').fadeIn('slow');
+    } else {
+      $('.back-to-top').fadeOut('slow');
+    }
+  });
+  $('.back-to-top').click(function () {
+    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+    return false;
+  });
+  
+  
+  const clientWidth = () => {
+    const doc = document.querySelector('body');
+    
+    return doc.clientWidth;
+  }
+  
+  
+  // Menu SideBar stay hidden in page Post and Blog
+  const hiddenNavBar = () => {
+    const url = window.location.href;
 
-    const interval = setInterval(() => {
-        count++;
-        pipe.push('|');
-        console.clear();
-        console.log(`%cBaixando... ${pipe.join('|')}`, 'font-size: .675rem; font-weight: 700')
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarHeader = document.querySelector('.sidebar-header');
+    const content = document.querySelector('.content');
 
-        if (count === 10) clearInterval(interval)
-    }, 300)
-}
+    if (url.includes('blog')) {
+      
+      if (clientWidth() <= 425) {
+        sidebar.style.marginLeft = '0';
+      }
+      
+      if (clientWidth() > 425 && clientWidth() <= 768) {
+        sidebar.style.marginLeft = '-255px';
+        sidebarHeader.style.display = 'none';
+        content.style.width = '100%';
+      }
+      
+      if (clientWidth() > 768) {
+        sidebar.style.marginLeft = '-270px';
+        sidebarHeader.style.display = 'none';
+        content.style.width = '100%';
+        content.style.marginLeft = '0'; 
+      }
+    }
+  }  
+  
+  
+  // Send message of the form contact
+  const btn = document.getElementById('btnSendMessage');
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
 
-const openTabs = () => {
-    const brandings = document.querySelectorAll('.branding');
-    const tabs = document.getElementById('tabs-companies');
-    const companies = document.getElementById('companies');
+      const feedback = document.getElementById('message-feedback');
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
 
-    // Pega a altura padrão da Section
-    let heightCompaniesSections = 0;
-    if (companies)
-        heightCompaniesSections = companies.getBoundingClientRect().height;
+      const msgFull = encodeURIComponent(`Nome:${name}-Email:${email}-Aassunto:${subject}-Mensagem:${message}`)
 
-    // Pré-cacheia os elementos de tab
-    let tabElements;
-    if (tabs)
-        tabElements = Array.from(tabs.children);
+      feedback.classList.remove('valid-feedback', 'invalid-feedback');
+      feedback.innerText = '';
 
-    tabElements[0].classList.replace('opacity-0', 'opacity-100');
-    brandings[0].classList.add('border-orange-500');
-    companies.style.height = `${heightCompaniesSections + tabElements[0].getBoundingClientRect().height}px`;
+      if (email == '' && message == '') {
+        feedback.classList.add('invalid-feedback', 'd-block');
+        feedback.innerText = 'Ops... alguns campos como e-mail e mensagem são obrigatórios.';
 
-    // Adiciona o evento de click em cada branding
-    brandings.forEach(branding => {
-        branding.addEventListener('click', (e) => {
-            // Reseta a altura da Section
-            companies.style.height = 'auto';
+        return;
+      }
 
-            // Esconde todas as tabs abertas
-            tabElements.forEach(tab => {
-              tab.classList.replace('opacity-100', 'opacity-0')
-              tab.classList.remove('z-10');
-            });
+      const url = `https://api.whatsapp.com/send?phone=5521979922199&text=${msgFull}`
+      window.open(url, '_self');
 
-            // Pega o nome da tab a ser exibida
-            const targetTab = tabs.children.namedItem(branding.dataset.name);
-
-            // Remove a classe de seleção de todos os elementos
-            document.querySelectorAll('#companies .cursor-pointer').forEach(item => item.classList.remove('border-orange-500'));
-
-            if (targetTab && !targetTab.classList.contains('opacity-100')) {
-                // Pega a altura da Tab selecionada
-                const heightTabCompanies = targetTab.getBoundingClientRect().height;
-
-                // Ajusta dinamicamente a altura da section
-                companies.style.height = `${heightCompaniesSections + heightTabCompanies}px`;
-
-                // Marca o branding como selecionado
-                branding.classList.add('border-orange-500');
-
-                // Exibe a tab correspondente
-                targetTab.classList.replace('opacity-0', 'opacity-100');
-                targetTab.classList.add('z-10');
-            } else {
-                // Se já estiver visível, oculta a tab
-                targetTab.classList.replace('opacity-100', 'opacity-0');
-                targetTab.classList.remove('z-10');
-            }
-        });
+      feedback.classList.add('valid-feedback', 'd-block');
+      feedback.innerText = 'Deve ter aberto uma nova aba para enviar mensagem por Whatsapp...';
     });
-}
-
-// Init Functions
-window.addEventListener('load', () => {
+  }
+   
+  
+  window.addEventListener('load', () => {
     tagsPreCode();
-    openTabs();
-
+    hiddenNavBar();
+    
+    // Eater Egg
     console.clear();
-    console.log('%cMoisés Fausto', 'color: #f97316; font-size: 3rem; font-weight: 700')
-    console.log('%cFull Stack Developer | PHP | Laravel | Vue Js', 'color: #f97316; font-size: 1.25rem; font-weight: 400')
-    console.log('%cOuuu, o que cê ta fazendo aqui??? 🫣', 'font-size: 1.25rem; font-weight: 400')
-})
+    console.log('%cMoisés Fausto', 'color: #f97316; font-size: 3rem; font-weight: 700');
+    console.log('%cFullstack Developer | PHP | Laravel | Vue Js', 'color: #f97316; font-size: 1.25rem; font-weight: 400');
+    console.log('%cOuuu, o que cê ta fazendo aqui??? 🫣', 'font-size: 1.25rem; font-weight: 400');
+  });
+})(jQuery);
