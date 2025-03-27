@@ -1048,6 +1048,7 @@ a:focus {
   justify-content: center;
   align-items: center;
   margin-top: 24px;
+  gap: 8px;
 }
 
 .pagination a {
@@ -1096,12 +1097,17 @@ a:focus {
   line-height: 1.3;  
 }
 
-.article .content-inner article section h2,
+.article .content-inner article section h2{
+  margin-top: 0;
+  margin-bottom: .67em;
+  font-size: 1.725rem;
+}
+
 .article .content-inner article section h3,
 .article .content-inner article section h4 {
   margin-top: 0;
   margin-bottom: .67em;
-  font-size: 1.725rem;
+  font-size: 1.225rem;
 }
 
 .article .content-inner article section p {
