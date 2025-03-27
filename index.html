@@ -33,8 +33,6 @@
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="/assets/lib/slick/slick.css" rel="stylesheet">
-    <link href="/assets/lib/slick/slick-theme.css" rel="stylesheet">
 
         <link rel="stylesheet" href="/build/css/app.css"/>
     
@@ -44,45 +42,45 @@
 <div class="wrapper">
   <nav class="sidebar">
     <div class="sidebar-header">
-      <img src="/assets/images/logo.png" alt="Moisés Fausto">
+      <img width="120" height="120" src="/assets/images/logo.png" loading=”lazy” alt="Moisés Fausto">
     </div>
     <div class="sidebar-content">
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a href="#" class="navbar-brand"><img width="30px" src="/assets/images/logo.png" alt="Moisés Fausto"></a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <a href="#" aria-label="Logo" class="navbar-brand"><img width="30px" src="/assets/images/logo.png" alt="Moisés Fausto"></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-label="Menu">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="nav navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/#header">Home<i class="fa fa-home"></i></a>
+              <a class="nav-link" aria-label="ir para a sessão Home" href="/#header">Home<i class="fa fa-home"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#about">Sobre<i class="fa fa-address-card"></i></a>
+              <a class="nav-link" aria-label="ir para a sessão Sobre" href="/#about">Sobre<i class="fa fa-address-card"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#experience">Experiências<i class="fa fa-star"></i></a>
+              <a class="nav-link" aria-label="ir para a sessão Experiências" href="/#experience">Experiências<i class="fa fa-star"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#service">Serviços<i class="fa fa-tasks"></i></a>
+              <a class="nav-link" aria-label="ir para a sessão Serviços" href="/#service">Serviços<i class="fa fa-tasks"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#portfolio">Portfólio<i class="fa fa-file-archive"></i></a>
+              <a class="nav-link" aria-label="ir para a sessão Portifólio" href="/#portfolio">Portfólio<i class="fa fa-file-archive"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#contact">Contato<i class="fa fa-envelope"></i></a>
+              <a class="nav-link" aria-label="ir para a sessão Contato" href="/#contact">Contato<i class="fa fa-envelope"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/posts/">Blog<i class="fas fa-thumbtack"></i></a>
+              <a class="nav-link" aria-label="ir para a Blog" href="/posts/">Blog<i class="fas fa-thumbtack"></i></a>
             </li>
           </ul>
         </div>
       </nav>
     </div>
     <div class="sidebar-footer">
-      <a class="btn" href="https://beacons.ai/moisesfausto"><i class="fas fa-link"></i></a>
-      <a class="btn" href="https://www.linkedin.com/in/moisesfausto/"><i class="fab fa-linkedin-in"></i></a>
-      <a class="btn" href="https://gitlab.com/moisesfausto"><i class="fab fa-github"></i></a>
+      <a class="btn" href="https://beacons.ai/moisesfausto" aria-label="acessar todos os links úteis"><i class="fas fa-link"></i></a>
+      <a class="btn" href="https://www.linkedin.com/in/moisesfausto/" aria-label="acessar rede social Linkedin"><i class="fab fa-linkedin-in"></i></a>
+      <a class="btn" href="https://gitlab.com/moisesfausto" aria-label="acessar Gitlab"><i class="fab fa-github"></i></a>
     </div>
   </nav>
 
@@ -104,7 +102,7 @@
   <div class="content-inner">
     <a class="btn" href download="/assets/pdf/br_curriculo-moises-fausto-da-silva.pdf"
        aria-label="Download Currículo"><i class="fa fa-download"></i>Curriculo</a>
-    <a class="btn" href="https://www.linkedin.com/in/moisesfausto/"><i
+    <a class="btn" href="https://www.linkedin.com/in/moisesfausto/" aria-label="ir para Linkedin"><i
       class="fa fa-hands-helping"></i>Saiba mais</a>
 
   </div>
@@ -119,7 +117,7 @@
     </div>
     <div class="row align-items-center">
       <div class="col-md-6 col-lg-5">
-        <img src="/assets/images/perfil-pessoal.png" alt="Moisés Fausto">
+        <img class="img-fluid" width="295" height="295" loading=”lazy” src="/assets/images/perfil-pessoal.webp" alt="Moisés Fausto">
       </div>
       <div class="col-md-6 col-lg-7">
         <p>
@@ -132,40 +130,20 @@
           priorizando testes para garantir a qualidade das minhas entregas.
         </p>
         <div class="d-flex justify-content-between flex-wrap mb-4 skils">
-          <i class="fab fa-php text-[#5A6598]" title="PHP"></i>
-          <i class="fab fa-vuejs text-[#3FB27F]" title="Vue js"></i>
-          <i class="fab fa-laravel text-[#F13C2F]" title="Laravel"></i>
-          <i class="fab fa-react text-[#48D0F8]" title="React"></i>
-          <i class="fab fa-docker text-[#5E8DEC]" title="Docker"></i>
-          <i class="fas fa-database text-[#3E6E93]" title="Banco de Dados"></i>
-          <i class="fab fa-wordpress text-[#1E1E1E]" title="Wordpress"></i>
-          <i class="fab fa-html5 text-[#EB6227]" title="HTML5"></i>
-          <i class="fab fa-css3 text-[#3D96D1]" title="CSS3"></i>
-          <i class="fab fa-figma text-[#EC4C1E]" title="Figma"></i>
-          <i class="fab fa-linux text-orange-700" title="Linux"></i>
-          <i class="fab fa-node-js text-[#67A356]" title="Node js"></i>
+          <i class="fab fa-php" title="PHP"></i>
+          <i class="fab fa-vuejs" title="Vue js"></i>
+          <i class="fab fa-laravel" title="Laravel"></i>
+          <i class="fab fa-react" title="React"></i>
+          <i class="fab fa-docker" title="Docker"></i>
+          <i class="fas fa-database" title="Banco de Dados"></i>
+          <i class="fab fa-wordpress" title="Wordpress"></i>
+          <i class="fab fa-html5" title="HTML5"></i>
+          <i class="fab fa-css3" title="CSS3"></i>
+          <i class="fab fa-figma" title="Figma"></i>
+          <i class="fab fa-linux" title="Linux"></i>
+          <i class="fab fa-node-js" title="Node js"></i>
         </div>
-        <a class="btn" href="https://www.linkedin.com/in/moisesfausto/">Saiba mais</a>
-      </div>
-    </div>
-    <div class="row d-none">
-      <div class="col-md-12">
-        <div class="skills">
-          <div class="skill-name">
-            <i class="fab fa-wordpress text-[#1E1E1E]" title="Wordpress"></i>
-            <i class="fab fa-html5 text-[#EB6227]" title="HTML5"></i>
-            <i class="fab fa-css3 text-[#3D96D1]" title="CSS3"></i>
-            <i class="fab fa-figma text-[#EC4C1E]" title="Figma"></i>
-            <i class="fab fa-linux text-orange-700" title="Linux"></i>
-            <i class="fab fa-react text-[#48D0F8]" title="React"></i>
-            <i class="fab fa-php text-[#5A6598]" title="PHP"></i>
-            <i class="fab fa-laravel text-[#F13C2F]" title="Laravel"></i>
-            <i class="fab fa-node-js text-[#67A356]" title="Node js"></i>
-            <i class="fab fa-vuejs text-[#3FB27F]" title="Vue js"></i>
-            <i class="fas fa-database text-[#3E6E93]" title="Banco de Dados"></i>
-            <i class="fab fa-docker text-[#5E8DEC]" title="Docker"></i>
-          </div>
-        </div>
+        <a class="btn" href="https://www.linkedin.com/in/moisesfausto/" aria-label="Ir para o Linkedin">Saiba mais</a>
       </div>
     </div>
   </div>
@@ -312,12 +290,12 @@
       <div class="col-lg-4 col-md-6 portfolio-item dev-back">
         <div class="portfolio-wrap">
           <figure>
-            <img class="p-4" src="/assets/images/americanas.png" alt="Lasa">
-            <button class="link-preview" data-project="lasa" data-target="#modal"><i
+            <img class="p-4 img-fluid" loading=”lazy” src="/assets/images/americanas.png" alt="Lasa">
+            <button class="link-preview" data-project="lasa" data-target="#modal" aria-label="mais informações sobre projeto"><i
               class="fa fa-eye"></i></button>
             <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
                title="Mais detalhes"><i class="fa fa-link"></i></a>
-            <a class="portfolio-title" href="javascript:void(0)">Lasa <span>Back End</span></a>
+            <p class="portfolio-title">Lasa <span>Back End</span></p>
           </figure>
         </div>
       </div>
@@ -325,11 +303,11 @@
       <div class="col-lg-4 col-md-6 portfolio-item dev-front">
         <div class="portfolio-wrap">
           <figure>
-            <img class="p-4" src="/assets/images/infoconsig-logo.webp" alt="Infoconsig">
-            <button class="link-preview" data-project="infoconsig" data-target="#modal"><i class="fa fa-eye"></i></button>
+            <img class="p-4 img-fluid" loading=”lazy” src="/assets/images/infoconsig-logo.webp" alt="Infoconsig">
+            <button class="link-preview" data-project="infoconsig" data-target="#modal" aria-label="mais informações sobre projeto"><i class="fa fa-eye"></i></button>
             <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
                title="Mais detalhes"><i class="fa fa-link"></i></a>
-            <a class="portfolio-title" href="javascript:void(0)">Infoconsig <span>Front End</span></a>
+            <p>Infoconsig <span>Front End</span></p>
           </figure>
         </div>
       </div>
@@ -337,11 +315,11 @@
       <div class="col-lg-4 col-md-6 portfolio-item dev-back">
         <div class="portfolio-wrap">
           <figure>
-            <img class="p-4" src="/assets/images/govbr-logo-large.png" alt="gov.br">
-            <button class="link-preview" data-project="govbr" data-target="#modal"><i class="fa fa-eye"></i></button>
+            <img class="p-4 img-fluid" loading=”lazy” src="/assets/images/govbr-logo-large.png" alt="gov.br">
+            <button class="link-preview" data-project="govbr" data-target="#modal" aria-label="mais informações sobre projeto"><i class="fa fa-eye"></i></button>
             <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
                title="Mais detalhes"><i class="fa fa-link"></i></a>
-            <a class="portfolio-title" href="javascript:void(0)">GOV.BR <span>Back End</span></a>
+            <p>GOV.BR <span>Back End</span></p>
           </figure>
         </div>
       </div>
@@ -349,11 +327,11 @@
       <div class="col-lg-4 col-md-6 portfolio-item dev-front">
         <div class="portfolio-wrap">
           <figure>
-            <img class="p-4" src="/assets/images/riocard-logo.png" alt="RioCard+">
-            <button class="link-preview" data-project="riocard"><i class="fa fa-eye"></i></button>
+            <img class="p-4 img-fluid" loading=”lazy” src="/assets/images/riocard-logo.png" alt="RioCard+">
+            <button class="link-preview" data-project="riocard" aria-label="mais informações sobre projeto"><i class="fa fa-eye"></i></button>
             <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
                title="Mais detalhes"><i class="fa fa-link"></i></a>
-            <a class="portfolio-title" href="javascript:void(0)">RioCard+ <span>Front End</span></a>
+            <p>RioCard+ <span>Front End</span></p>
           </figure>
         </div>
       </div>
@@ -361,12 +339,12 @@
       <div class="col-lg-4 col-md-6 portfolio-item dev-front dev-back dev-app">
         <div class="portfolio-wrap">
           <figure>
-            <img class="p-4" src="/assets/images/senar-mt-logo.jpg" alt="Senar MT">
-            <button class="link-preview" data-project="senar"><i class="fa fa-eye"></i></button>
+            <img class="p-4 img-fluid" loading=”lazy” src="/assets/images/senar-mt-logo.webp" alt="Senar MT">
+            <button class="link-preview" data-project="senar" aria-label="mais informações sobre projeto"><i class="fa fa-eye"></i></button>
             <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
                title="Mais detalhes"><i class="fa fa-link"></i></a>
-            <a class="portfolio-title" href="javascript:void(0)">Senar MT <span>Back End & Front End &
-                                          App</span></a>
+            <p>Senar MT <span>Back End & Front End &
+                                          App</span></p>
           </figure>
         </div>
       </div>
@@ -374,11 +352,11 @@
       <div class="col-lg-4 col-md-6 portfolio-item dev-back dev-front">
         <div class="portfolio-wrap">
           <figure>
-            <img class="p-4" src="/assets/images/klini-logo.webp" alt="Klini">
-            <button class="link-preview" data-project="klini"><i class="fa fa-eye"></i></button>
+            <img class="p-4 img-fluid" loading=”lazy” src="/assets/images/klini-logo.webp" alt="Klini">
+            <button class="link-preview" data-project="klini" aria-label="mais informações sobre projeto"><i class="fa fa-eye"></i></button>
             <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
                title="Mais detalhes"><i class="fa fa-link"></i></a>
-            <a class="portfolio-title" href="javascript:void(0)">Klini <span>Back End & Front End</span></a>
+            <p>Klini <span>Back End & Front End</span></p>
           </figure>
         </div>
       </div>
@@ -386,11 +364,11 @@
       <div class="col-lg-4 col-md-6 portfolio-item dev-back">
         <div class="portfolio-wrap">
           <figure>
-            <img class="p-4" src="/assets/images/doc-facil.jpeg" alt="Doc Fácil">
-            <button class="link-preview" data-project="docfacil"><i class="fa fa-eye"></i></button>
+            <img class="p-4 img-fluid" loading=”lazy” src="/assets/images/doc-facil.jpeg" alt="Doc Fácil">
+            <button class="link-preview" data-project="docfacil" aria-label="mais informações sobre projeto"><i class="fa fa-eye"></i></button>
             <a href="https://www.linkedin.com/in/moisesfausto/#projects" class="link-details"
                title="Mais detalhes"><i class="fa fa-link"></i></a>
-            <a class="portfolio-title" href="javascript:void(0)">Doc Fácil <span>Back End</span></a>
+            <p>Doc Fácil <span>Back End</span></p>
           </figure>
         </div>
       </div>
@@ -398,11 +376,11 @@
       <div class="col-lg-4 col-md-6 portfolio-item dev-back dev-app">
         <div class="portfolio-wrap">
           <figure>
-            <img class="p-4" src="/assets/images/comuna.png" alt="Comuna APP">
-            <button class="link-preview" data-project="comuna"><i class="fa fa-eye"></i></button>
+            <img class="p-4 img-fluid" loading=”lazy” src="/assets/images/comuna.png" alt="Comuna APP">
+            <button class="link-preview" data-project="comuna" aria-label="mais informações sobre projeto"><i class="fa fa-eye"></i></button>
             <a href="https://comuna.app.br/" class="link-details" title="Mais detalhes"><i
               class="fa fa-link"></i></a>
-            <a class="portfolio-title" href="javascript:void(0)">Comuna APP <span>App</span></a>
+            <p class="portfolio-title">Comuna APP <span>App</span></p>
           </figure>
         </div>
       </div>
@@ -467,16 +445,16 @@
           <p><i class="fa fa-user"></i>Moisés Fausto</p>
           <p><i class="fa fa-tag"></i>Fullstack Developer</p>
           <p><i class="fa fa-envelope"></i><a
-            href="mailto:moisesfaustoo@gmail.com">moisesfaustoo@gmail.com</a></p>
+            href="mailto:moisesfaustoo@gmail.com" aria-label="email de contato">moisesfaustoo@gmail.com</a></p>
           <p class="d-none"><i class="fa fa-phone"></i><a href="#">(21) 9 1234-5678</a>
           </p>
           <p><i class="fa fa-map-marker"></i>Rio de Janeiro, RJ - Brasil</p>
           <div class="social">
-            <a class="btn" href="https://beacons.ai/moisesfausto"><i
+            <a class="btn" href="https://beacons.ai/moisesfausto" aria-label="link úteis"><i
               class="fas fa-link"></i></a>
-            <a class="btn" href="https://www.linkedin.com/in/moisesfausto/"><i
+            <a class="btn" href="https://www.linkedin.com/in/moisesfausto/" aria-label="Linkedin"><i
               class="fab fa-linkedin-in"></i></a>
-            <a class="btn" href="https://gitlab.com/moisesfausto"><i
+            <a class="btn" href="https://gitlab.com/moisesfausto" aria-label="Gitlab"><i
               class="fab fa-github"></i></a>
           </div>
         </div>
@@ -500,7 +478,7 @@
               <textarea class="form-control" id="message" rows="5" placeholder="*Bora bater um papo..."></textarea>
             </div>
             <div>
-              <button type="button" id="btnSendMessage" class="btn">Enviar</button>
+              <button type="button" id="btnSendMessage" class="btn" aria-label="Enviar Contato">Enviar</button>
             </div>            
           </form>
         </div>
@@ -532,7 +510,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modaLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="fechar">
           <span aria-hidden="true"><i class="fa fa-times"></i></span>
         </button>
       </div>
@@ -543,13 +521,12 @@
 </div>
 <!-- Modal -->
 
-<a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+<a href="#" class="back-to-top" aria-label="ir para o topo"><i class="fa fa-angle-double-up"></i></a>
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/lib/easing/easing.min.js"></script>
-<script src="/assets/lib/slick/slick.min.js"></script>
 <script src="/assets/lib/typed/typed.min.js"></script>
 <script src="/assets/lib/waypoints/waypoints.min.js"></script>
 <script src="/assets/lib/isotope/isotope.pkgd.min.js"></script>

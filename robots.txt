@@ -1,7 +1,3 @@
-robots
----
-permalink: none
----
-
 User-agent: *
-Sitemap: {{ site.url }}/sitemap.xml
+Allow: /
+Sitemap: https://moisesfausto.com.br/sitemap.xml
