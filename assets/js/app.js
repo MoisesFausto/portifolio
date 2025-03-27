@@ -45,16 +45,6 @@
   });
 
 
-  // Review slider
-  $('.review-slider').slick({
-    autoplay: true,
-    dots: false,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  });
-
-
   // Current Year in the Footer
   const currentYear = new Date().getFullYear();
 
