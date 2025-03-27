@@ -3,11 +3,124 @@
     <title><![CDATA[Moisés Fausto | Full Stack Developer | PHP | Laravel | Vue Js]]></title>
     <link href="/atom.xml" rel="self"/>
     <link href="/"/>
-    <updated>2025-03-27T22:42:04+00:00</updated>
+    <updated>2025-03-27T23:13:47+00:00</updated>
     <id>/</id>
         <author>
         <name><![CDATA[Moisés Fausto]]></name>            </author>
         <generator uri="http://sculpin.io/">Sculpin</generator>
+        <entry>
+        <title type="html"><![CDATA[Turso vs Supabase: Qual Banco de Dados Escolher para sua Aplicação?]]></title>
+        <link href="/blog/2025/03/27/turso-vs-supabase-qual-banco-de-dados-escolher-para-sua-aplicacao"/>
+        <updated>2025-03-27T00:00:00+00:00</updated>
+        <id>/blog/2025/03/27/turso-vs-supabase-qual-banco-de-dados-escolher-para-sua-aplicacao</id>
+        <content type="html"><![CDATA[<h1 id="turso-vs-supabase%3A-qual-banco-de-dados-escolher-para-sua-aplica%C3%A7%C3%A3o%3F">Turso vs Supabase: Qual Banco de Dados Escolher para sua Aplicação?</h1>
+
+<p><img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*EKBYnyBQ7SbvU1vwkp5V0Q.png" alt="Turso vs Supabase" /></p>
+
+<p><em>Está em dúvida sobre qual banco de dados escolher para sua aplicação? Neste artigo, comparamos o Turso e o Supabase, duas opções modernas e poderosas. Descubra os pontos positivos e negativos de cada um, qual é o mais indicado para diferentes tipos de aplicações e saiba qual deles pode ser a escolha ideal para seu próximo projeto!</em></p>
+
+<p>Recentemente estava vendo um tutorial de como criar um MVP, e me deparei com uma ferramenta que particulamente achei bem interessante. Neste tutorial foi ensinado a criar um MVP com <a href="https://turso.tech/">Turso</a>, um banco de dados na nuvem, similar ao <a href="https://supabase.com/">Supabase</a> ou Firebase, com a diferança que <strong>ele não é um NoSQL</strong>. Por esse motivo, eu fui um pouco mais afundo para entender melhor, e entender a diferença entre o <a href="https://supabase.com/">Supabase</a> e o <a href="https://turso.tech/">Turso</a>.</p>
+
+<p>Neste artigo, vamos explorar as diferenças entre <a href="https://turso.tech/">Turso</a> e <a href="https://supabase.com/">Supabase</a>, dois bancos de dados modernos que oferecem características únicas para desenvolvedores.</p>
+
+<h2 id="o-que-%C3%A9-o-turso%3F">O que é o Turso?</h2>
+
+<p>O <a href="https://turso.tech/">Turso</a> e <a href="https://supabase.com/">Supabase</a> é uma plataforma de banco de dados distribuído baseada no <a href="https://docs.turso.tech/libsql">libSQL</a>, uma variação do <a href="https://www.sqlite.org/">SQLite</a>. Otimizado para baixa latência, ele é projetado para aplicações que requerem respostas rápidas e que podem ser distribuídas globalmente. Seus principais recursos incluem replicação de borda para leituras de baixa latência, além de backups e recuperação, o que torna a plataforma robusta e confiável.</p>
+
+<h3 id="%E2%AC%86%EF%B8%8F-pontos-positivos">⬆️ Pontos Positivos</h3>
+
+<ul>
+<li><strong>Baixa Latência</strong>: A replicação de borda reduz o tempo de resposta, ideal para aplicações globais.</li>
+<li><strong>Simplicidade do SQLite</strong>: Fácil de usar e configurar, especialmente para desenvolvedores que buscam uma solução simples.</li>
+<li><strong>Distribuição Global</strong>: Com suporte para múltiplas regiões, o Turso mantém os dados mais próximos dos usuários.</li>
+<li><strong>Backups e Recuperação</strong>: Restauração a qualquer ponto no tempo, aumentando a segurança.</li>
+</ul>
+
+<h3 id="%E2%AC%87%EF%B8%8F-pontos-negativos">⬇️ Pontos Negativos</h3>
+
+<ul>
+<li><strong>Funcionalidade Limitada</strong>: Não oferece autenticação, armazenamento de arquivos ou outras funções de backend.</li>
+<li><strong>Consultas Complexas Limitadas</strong>: Menor capacidade para consultas avançadas em comparação ao PostgreSQL.</li>
+<li><strong>Comunidade Menor</strong>: Por ser novo, tem uma comunidade menor e suporte mais restrito.</li>
+</ul>
+
+<h2 id="o-que-%C3%A9-o-supabase%3F">O que é o Supabase?</h2>
+
+<p>O <a href="https://supabase.com/">Supabase</a> é uma alternativa open-source ao Firebase, oferecendo um backend completo com banco de dados, autenticação, armazenamento de arquivos, funções em tempo real e de borda. Com base no <a href="https://www.postgresql.org/">PostgreSQL</a>, ele é ideal para aplicações que precisam de funcionalidades complexas e robustez.</p>
+
+<h3 id="%E2%AC%86%EF%B8%8F-pontos-positivos">⬆️ Pontos Positivos</h3>
+
+<ul>
+<li><strong>Backend Completo</strong>: Inclui autenticação, armazenamento, assinaturas em tempo real e suporte a banco de dados robusto.</li>
+<li><strong>Baseado em PostgreSQL</strong>: Suporte para consultas avançadas, funções personalizadas e relacionamentos complexos.</li>
+<li><strong>Em Tempo Real</strong>: Funcionalidades de tempo real para dados sempre atualizados.</li>
+<li><strong>Edge Functions</strong>: Permite rodar código próximo ao usuário para melhorar o tempo de resposta.</li>
+</ul>
+
+<h3 id="%E2%AC%87%EF%B8%8F-pontos-negativos">⬇️ Pontos Negativos</h3>
+
+<ul>
+<li><strong>Latência Relativamente Alta</strong>: Em cenários globais, a latência pode ser maior sem a replicação de borda.</li>
+<li><strong>Complexidade Adicional</strong>: A amplitude de recursos pode ser complexa para necessidades simples.</li>
+<li><strong>Uso Intenso de Recursos</strong>: Arquitetura mais robusta que pode consumir mais recursos, aumentando custos.</li>
+</ul>
+
+<h2 id="comparativo%3A-qual-banco-de-dados-para-cada-tipo-de-aplica%C3%A7%C3%A3o%3F">Comparativo: Qual Banco de Dados para Cada Tipo de Aplicação?</h2>
+
+<h3 id="aplica%C3%A7%C3%B5es-web-globais-e-interativas">Aplicações Web Globais e Interativas</h3>
+
+<ul>
+<li>Banco Ideal: Turso</li>
+<li>Por quê: Sua baixa latência e replicação de borda tornam o Turso perfeito para aplicações que precisam de resposta rápida globalmente.</li>
+</ul>
+
+<h3 id="aplica%C3%A7%C3%B5es-web-completas-e-de-longo-prazo">Aplicações Web Completas e de Longo Prazo</h3>
+
+<ul>
+<li>Banco Ideal: Supabase</li>
+<li>Por quê: O Supabase oferece um backend completo com autenticação, armazenamento e tempo real, essencial para aplicações complexas de longo prazo.</li>
+</ul>
+
+<h3 id="aplica%C3%A7%C3%B5es-mobile-que-exigem-velocidade-e-simplicidade">Aplicações Mobile que Exigem Velocidade e Simplicidade</h3>
+
+<ul>
+<li>Banco Ideal: Turso</li>
+<li>Por quê: A baixa latência e distribuição global do Turso o tornam ideal para apps móveis rápidos e simples.</li>
+</ul>
+
+<h3 id="aplica%C3%A7%C3%B5es-mobile-interativas-e-colaborativas">Aplicações Mobile Interativas e Colaborativas</h3>
+
+<ul>
+<li>Banco Ideal: Supabase</li>
+<li>Por quê: Suporte completo a backend e funcionalidades em tempo real tornam o Supabase a escolha perfeita para aplicativos colaborativos e interativos.</li>
+</ul>
+
+<h3 id="prototipagem-e-mvps-simples">Prototipagem e MVPs Simples</h3>
+
+<ul>
+<li>Banco Ideal: Ambos</li>
+<li>Por quê: O Turso é ótimo para MVPs simples, enquanto o Supabase é ideal para MVPs mais robustos e com planos de crescimento.</li>
+</ul>
+
+<h2 id="conclus%C3%A3o">Conclusão</h2>
+
+<p>Tanto <a href="https://turso.tech/">Turso</a> e <a href="https://supabase.com/">Supabase</a> quanto Supabase têm suas vantagens, mas a escolha depende das necessidades da sua aplicação:</p>
+
+<p>👉 Escolha o Turso se precisar de um banco de dados rápido, com baixa latência, que funcione globalmente e tenha requisitos de backend simples.</p>
+
+<p>👉 Escolha o Supabase se sua aplicação exige um backend completo, com autenticação, tempo real e um banco de dados robusto.</p>
+
+<p><strong>Avaliar os requisitos da sua aplicação é essencial para tomar a decisão certa!</strong> 😉</p>
+
+<p>É claro que existe diversos outros bancos de dados, inclusive com abordagem diferentes, como o Firebase da Google, que também pode ser muito útil na sua aplicação.</p>
+
+<p>Eu Preferi abordar esses dois, por particulamente preferir banco de dados SQL ao invés de NoSQL.</p>
+
+<p>Entáo eu espero ter ajudado você a fazer uma melhor escolha baseado nos pontos acima.</p>
+
+<p>That's all folks!</p>
+]]></content>
+    </entry>
         <entry>
         <title type="html"><![CDATA[6 truques do PHP que você deveria conhecer]]></title>
         <link href="/blog/2024/10/12/6-truques-do-php-que-voce-deveria-conhecer"/>
