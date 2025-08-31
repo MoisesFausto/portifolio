@@ -1,27 +1,34 @@
 (function ($) {
   "use strict";
 
-  // Smooth scrolling on the navbar links
-  $(".navbar-nav a").on('click', function (event) {
-    if (this.hash !== "") {
-      event.preventDefault();
+  // Open Menu
+  $(document).ready(function () {
+    // rounded-lg bg-white p-4 absolute top-[60px] left-0
+    const btn = document.getElementById('menu');
+    const menu = document.getElementById('navbar-default');
 
-      $('html, body').animate({
-        scrollTop: $(this.hash).offset().top - 30
-      }, 1500, 'easeInOutExpo');
+    btn.addEventListener('click', function () {
+      btn.setAttribute('aria-expanded', btn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+    
+      menu.classList.toggle('hidden');
+      menu.classList.add(
+        'absolute',
+        'top-[60px]',
+        'left-0',
+        'rounded-lg',
+        'bg-white',
+        'p-4',
+        'shadow-lg',
+        'z-50');
+    });
 
-      if ($(this).parents('.navbar-nav').length) {
-        $('.navbar-nav .active').removeClass('active');
-        $(this).closest('a').addClass('active');
-      }
-    }
   });
 
-
   // Typed Initiate
-  if ($('.header h2').length == 1) {
-    const typed_strings = $('.header .typed-text').text();
-    const typed = new Typed('.header h2', {
+  const typedElement = document.querySelector('.description h2');
+  if (typedElement) {
+    const typed_strings = $('.description .typed-text').text();
+    new Typed(typedElement, {
       strings: typed_strings.split(', '),
       typeSpeed: 100,
       backSpeed: 20,
@@ -29,21 +36,6 @@
       loop: true
     });
   }
-
-
-  // Porfolio isotope and filter
-  const portfolioIsotope = $('.portfolio-container').isotope({
-    itemSelector: '.portfolio-item',
-    layoutMode: 'fitRows'
-  });
-
-  $('#portfolio-flters li').on('click', function () {
-    $("#portfolio-flters li").removeClass('filter-active');
-    $(this).addClass('filter-active');
-
-    portfolioIsotope.isotope({filter: $(this).data('filter')});
-  });
-
 
   // Current Year in the Footer
   const currentYear = new Date().getFullYear();
@@ -59,155 +51,134 @@
   if (experience) experience.innerText = "".concat(experienceTotal, " anos");
 
 
-
-  // Open Modal with the project details
-  const btnOpenModal = document.querySelectorAll('.link-preview');
-
-  fetch('/projects.json')
-    .then(response => response.json())
-    .then((data) => openModalProjects(data))
-    .catch(error => console.error(error));
-
-  function openModalProjects(data) {
-    btnOpenModal.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const modalTitle = document.querySelector('.modal-title');
-        const modalBody = document.querySelector('.modal-body');
-        const modalFooter = document.querySelector('.modal-footer');
-
-        // Clear the modal content
-        modalFooter.innerHTML = '';
-
-        data.forEach(project => {
-          if (project.name.toLocaleLowerCase() === btn.dataset.project.toLocaleLowerCase()) {
-            modalTitle.innerText = project.title;
-            modalBody.innerHTML = project.description;
-
-            project.techs.forEach(tech => {
-              modalFooter.innerHTML += `<span class="badge badge-secondary">${tech}</span>`;
-            })
-          }
-        });
-
-        $('#modal').modal('show');
-      });
-    })
-  }
-  
-  // Limit Text in Blog description
-  const descriptions = document.querySelectorAll('#description')
-  if (descriptions.length) {
-    descriptions.forEach(description => {
-      if (description.innerText.length >= 94) description.innerText = `${description.innerText.slice(0, 94)}...`
-    })
-  }
-
-  const tagsPreCode = () => {
-    const tagCodes = document.querySelectorAll('code')
-
-    if (tagCodes) {
-      tagCodes.forEach(code => {
-        code.innerHTML = `<div class="menu-code d-flex align-items-center mb-3"> 
-                                <div class="menu-close rounded-circle"></div> 
-                                <div class="menu-minimize rounded-circle"></div> 
-                                <div class="menu-maximize rounded-circle"></div> 
-                              </div>` + code.innerHTML;
-      })
-    }
-  }
-
-  // Back to top button
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-    }
-  });
-  $('.back-to-top').click(function () {
-    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-    return false;
-  });
-  
-  
-  const clientWidth = () => {
-    const doc = document.querySelector('body');
-    
-    return doc.clientWidth;
-  }
-  
-  
-  // Menu SideBar stay hidden in page Post and Blog
-  const hiddenNavBar = () => {
-    const url = window.location.href;
-
-    const sidebar = document.querySelector('.sidebar');
-    const sidebarHeader = document.querySelector('.sidebar-header');
-    const content = document.querySelector('.content');
-
-    if (url.includes('blog')) {
-      
-      if (clientWidth() <= 425) {
-        sidebar.style.marginLeft = '0';
+  // Fade-in animado nas seções ao rolar
+  function onScrollFadeIn() {
+    document.querySelectorAll('.fade-in').forEach(function (el) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('visible');
       }
-      
-      if (clientWidth() > 425 && clientWidth() <= 768) {
-        sidebar.style.marginLeft = '-255px';
-        sidebarHeader.style.display = 'none';
-        content.style.width = '100%';
-      }
-      
-      if (clientWidth() > 768) {
-        sidebar.style.marginLeft = '-270px';
-        sidebarHeader.style.display = 'none';
-        content.style.width = '100%';
-        content.style.marginLeft = '0'; 
-      }
-    }
-  }  
-  
-  
-  // Send message of the form contact
-  const btn = document.getElementById('btnSendMessage');
-  if (btn) {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      const feedback = document.getElementById('message-feedback');
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-
-      const msgFull = encodeURIComponent(`Nome:${name}-Email:${email}-Aassunto:${subject}-Mensagem:${message}`)
-
-      feedback.classList.remove('valid-feedback', 'invalid-feedback');
-      feedback.innerText = '';
-
-      if (email == '' && message == '') {
-        feedback.classList.add('invalid-feedback', 'd-block');
-        feedback.innerText = 'Ops... alguns campos como e-mail e mensagem são obrigatórios.';
-
-        return;
-      }
-
-      const url = `https://api.whatsapp.com/send?phone=5521979922199&text=${msgFull}`
-      window.open(url, '_self');
-
-      feedback.classList.add('valid-feedback', 'd-block');
-      feedback.innerText = 'Deve ter aberto uma nova aba para enviar mensagem por Whatsapp...';
     });
   }
-   
-  
-  window.addEventListener('load', () => {
-    tagsPreCode();
-    hiddenNavBar();
-    
-    // Eater Egg
-    console.clear();
-    console.log('%cMoisés Fausto', 'color: #f97316; font-size: 3rem; font-weight: 700');
-    console.log('%cFullstack Developer | PHP | Laravel | Vue Js', 'color: #f97316; font-size: 1.25rem; font-weight: 400');
-    console.log('%cOuuu, o que cê ta fazendo aqui??? 🫣', 'font-size: 1.25rem; font-weight: 400');
+  window.addEventListener('scroll', onScrollFadeIn);
+  window.addEventListener('DOMContentLoaded', onScrollFadeIn);
+
+  // Menu ativo ao rolar
+  const sections = ['home', 'sobre', 'servicos', 'portfolio', 'blog', 'depoimentos', 'experiencia', 'contato'];
+  window.addEventListener('scroll', function () {
+    let scrollPos = window.scrollY + 120;
+    sections.forEach(id => {
+      const sec = document.getElementById(id);
+      if (sec && sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos) {
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('text-orange-100', 'font-bold'));
+        const active = document.querySelector('.nav-link[href="#' + id + '"]');
+        if (active) { active.classList.add('text-orange-100', 'font-bold'); }
+      }
+    });
   });
+
+  // Feedback do formulário
+  const contactForm = document.getElementById('formContato');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const btnEnviar = document.getElementById('btn-enviar');
+      const messageFeedback = document.getElementById('message-feedback');
+
+      const data = new FormData(contactForm);
+      const object = Object.fromEntries(data);
+      const json = JSON.stringify(object);
+
+      btnEnviar.innerText = 'Aguarde...';
+      btnEnviar.disabled = true;
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let data = await response.json();
+
+        if (response.status === 200) {
+          messageFeedback.innerText = 'Mensagem enviada com sucesso!';
+          messageFeedback.classList.remove('bg-red-50', 'text-red-800', 'block');
+          messageFeedback.classList.add('bg-green-50', 'text-green-800', 'block');
+          contactForm.reset();
+        } else {
+          messageFeedback.innerText = 'Erro ao enviar a mensagem. Por favor, tente novamente.';
+          messageFeedback.classList.remove('bg-green-50', 'text-green-800', 'block');
+          messageFeedback.classList.add('bg-red-50', 'text-red-800', 'block');
+        }
+      })
+      .catch(error => {
+        console.error(error);
+
+        messageFeedback.innerText = error;
+        messageFeedback.classList.remove('bg-green-50', 'text-green-800', 'block');
+        messageFeedback.classList.add('bg-red-50', 'text-red-800', 'block');
+      })
+      .finally(() => {
+        btnEnviar.innerText = 'Enviar';
+        btnEnviar.disabled = false;
+
+        setTimeout(() => {
+          messageFeedback.classList.remove('block');
+        }, 5000);        
+      });
+    });
+  }
+
+  // Init Particles.js
+  const particles = document.getElementById('particles-js');
+  if (particles) particlesJS.load('particles-js', '../assets/particlesjs-config.json');
+
+  // Owl Carousel
+  const about = document.getElementById('sobre');
+  if (about) { 
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        items: 12,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 1000,
+        autoplayHoverPause: true
+      });
+    });
+  }
+
+
+    // Limit Text in Blog description
+  var descriptions = document.querySelectorAll('#description');
+  if (descriptions.length) {
+    descriptions.forEach(function (description) {
+      if (description.innerText.length >= 94) description.innerText = "".concat(description.innerText.slice(0, 94), "...");
+    });
+  }
+
+  // Add menu fake buttons to code blocks
+  $(document).ready(function () {
+    var tagCodes = document.querySelectorAll('code');
+    if (tagCodes) {
+      tagCodes.forEach(function (code) {
+        code.innerHTML = `<div class="menu-code flex items-center mb-3">
+          <div class="menu-close rounded-full"></div>
+          <div class="menu-minimize rounded-full"></div>
+          <div class="menu-maximize rounded-full"></div>
+        </div>` + code.innerHTML;
+      });
+    }
+  });
+
+  // Eater Egg
+  console.clear();
+  console.log('%cMoisés Fausto', 'color: #f97316; font-size: 3rem; font-weight: 700');
+  console.log('%cFullstack Developer | PHP | Laravel | Vue Js', 'color: #f97316; font-size: 1.25rem; font-weight: 400');
+  console.log('%cOuuu, o que cê ta fazendo aqui??? 🫣', 'font-size: 1.25rem; font-weight: 400');
 })(jQuery);

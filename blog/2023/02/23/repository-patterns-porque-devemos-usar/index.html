@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Moisés Fausto"/>
 
-    <title>Repository Patterns: Porque devemos usar?</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Moisés Fausto" />
+
+  <title>Repository Patterns: Porque devemos usar?</title>
 <meta name="description" content="O Repository Pattern é um padrão de design de software que fornece uma abstração de alto nível para o acesso a dados. Ele é amplamente utilizado em projetos de software para separar a lógica de negócios da lógica de acesso a dados, tornando o código mais organizado, reutilizável e fácil de manter.">
 
 <meta property="og:title" content="Repository Patterns: Porque devemos usar?" />
@@ -30,87 +31,99 @@
 <script>hljs.highlightAll();</script>
 
 
-    <meta property="og:image:width" content="1080">
-    <meta property="og:image:height" content="850">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="850">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <link rel="shortcut icon" sizes="1050x1050" href="/assets/icons/logo.png">
-    <link rel="apple-touch-icon" sizes="1050x1050" href="/assets/icons/logo.png">
+  <link rel="shortcut icon" sizes="1050x1050" href="/assets/icons/logo.png">
+  <link rel="apple-touch-icon" sizes="1050x1050" href="/assets/icons/logo.png">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- CSS Libraries -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="/build/css/app.css" />
   
-    <!-- CSS Libraries -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0d061613ad.js" crossorigin="anonymous"></script>
+  
+  <style type="text/tailwindcss">
+    @theme {
+      --color-orange-100: #f97316;
+      --color-orange-200: #FF8533;
+      --color-black: #242424;
+    }
+  </style>
+</head>
 
-        <link rel="stylesheet" href="/build/css/app.css"/>
-    
-        <script src="https://kit.fontawesome.com/0d061613ad.js" crossorigin="anonymous"></script>
-    </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-<div class="wrapper">
-  <nav class="sidebar">
-    <div class="sidebar-header">
-      <img width="120" height="120" src="/assets/images/logo.png" loading=”lazy” alt="Moisés Fausto">
-    </div>
-    <div class="sidebar-content">
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a href="#" aria-label="Logo" class="navbar-brand"><img width="30px" src="/assets/images/logo.png" alt="Moisés Fausto"></a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-label="Menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="nav navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-label="ir para a sessão Home" href="/#header">Home<i class="fa fa-home"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-label="ir para a sessão Sobre" href="/#about">Sobre<i class="fa fa-address-card"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-label="ir para a sessão Experiências" href="/#experience">Experiências<i class="fa fa-star"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-label="ir para a sessão Serviços" href="/#service">Serviços<i class="fa fa-tasks"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-label="ir para a sessão Portifólio" href="/#portfolio">Portfólio<i class="fa fa-file-archive"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-label="ir para a sessão Contato" href="/#contact">Contato<i class="fa fa-envelope"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-label="ir para a Blog" href="/posts/">Blog<i class="fas fa-thumbtack"></i></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="sidebar-footer">
-      <a class="btn" href="https://beacons.ai/moisesfausto" aria-label="acessar todos os links úteis"><i class="fas fa-link"></i></a>
-      <a class="btn" href="https://www.linkedin.com/in/moisesfausto/" aria-label="acessar rede social Linkedin"><i class="fab fa-linkedin-in"></i></a>
-      <a class="btn" href="https://gitlab.com/moisesfausto" aria-label="acessar Gitlab"><i class="fab fa-github"></i></a>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3 relative">
+      <img src="/assets/images/logo.png" class="h-12" alt="Moisés Fausto">
+      <button id="menu" data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="navbar-default" aria-expanded="true">
+        <span class="sr-only">Abrir Menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
+        <ul class="flex flex-col lg:flex-row rounded-lg gap-6 lg:text-sm font-medium">
+          <li>
+            <a href="#home" class="nav-link text-gray-700 hover:text-orange-100 transition">Início</a>
+          </li>
+          <li>
+            <a href="#sobre" class="nav-link text-gray-700 hover:text-orange-100 transition">Sobre</a>
+          </li>
+          <li>
+            <a href="#servicos" class="nav-link text-gray-700 hover:text-orange-100 transition">Serviços</a>
+          </li>
+          <li>
+            <a href="#portfolio" class="nav-link text-gray-700 hover:text-orange-100 transition">Portfólio</a>
+          </li>
+          <li>
+            <a href="#blog" class="nav-link text-gray-700 hover:text-orange-100 transition">Blog</a>
+          </li>
+          <li>
+            <a href="#depoimentos" class="nav-link text-gray-700 hover:text-orange-100 transition">Depoimentos</a>
+          </li>
+          <li>
+            <a href="#experiencia" class="nav-link text-gray-700 hover:text-orange-100 transition">Experiências</a>
+          </li>
+          <li>
+            <a href="#contato" class="nav-link text-gray-700 hover:text-orange-100 transition">Contato</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <div class="content">
-    <main>
-      <div class="article" id="article">
-    <div class="content-inner">
-      <div class="row">
-        <div class="col-12 col-lg-8">
-          <article>
-            <header class="mb-4">
-              <h1 class="mb-4">Repository Patterns: Porque devemos usar?</h1>
-                            <p>O Repository Pattern é um padrão de design de software que fornece uma abstração de alto nível para o acesso a dados. Ele é amplamente utilizado em projetos de software para separar a lógica de negócios da lógica de acesso a dados, tornando o código mais organizado, reutilizável e fácil de manter.</p>
-                          </header>
-            
-            <section>
-              <p><img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*OAFJOw3aphju1Fm7ksDrtA.png" alt="Repository Patterns: Porque devemos usar?" /></p>
+  <main>
+    <main id="post" class="w-full mx-auto px-4 py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <article itemscope itemtype="http://schema.org/Article"
+      class="col-span-2 lg:bg-white rounded-2xl lg:shadow-xl lg:border lg:border-gray-100 lg:p-8">
+      <header>
+        <h1 itemprop="headline" class="text-4xl font-bold text-orange-100 mb-4">Repository Patterns: Porque devemos usar?</h1>
+        <p class="text-xs text-gray-400 mb-6">
+          Publicado em <time itemprop="datePublished" datetime="
+            23/02/2023">23/02/2023</time> •
+            <span itemprop="author">Moisés Fausto</span>
+        </p>
+      </header>
+
+      <section itemprop="articleBody" class="prose lg:prose-lg max-w-none text-black">
+        <p><img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*OAFJOw3aphju1Fm7ksDrtA.png" alt="Repository Patterns: Porque devemos usar?" /></p>
 
 <h2 id="aqui-est%C3%A3o-algumas-informa%C3%A7%C3%B5es-importantes-sobre-o-repository-pattern">Aqui estão algumas informações importantes sobre o Repository Pattern</h2>
 
@@ -195,130 +208,102 @@ module.exports = new UserRepository();
 
 <p>Apesar de parecer mais trabalhoso, na prática iremos entender melhor a importância desse Domain-Driven Design, onde iremos ter muito mais produtividade e manutenção mais fácil no código.</p>
 
+      </section>
 
-                            <div>
-                <a href="https://www.amazon.com.br/dp/B0BXQNRRFQ" aria-label="Curso de Programação com Javascript para Iniciantes: Guia Prático">
-                  <img class="img-fluid rounded" src="/assets/images/marketing/672x208-ebook-javascript-para-iniciantes.png" alt="Curso de Programação com Javascript para Iniciantes: Guia Prático">
-                </a>
-              </div>
-                          </section>
-            
-            <section class="taxonomies mt-4">
-              <div>
-                <strong>tags:</strong>
-                                <span class="badge badge-secondary">repository-patterns</span>
-                                <span class="badge badge-secondary">DDD</span>
-                                <span class="badge badge-secondary">nodejs</span>
-                              </div>
-              <div>
-                <strong>categoria:</strong>
-                                <span class="badge badge-secondary">arquiteture</span>
-                              </div>
-            </section>
-            
-            <footer class="mt-4">
-              <p class="author">Moisés Fausto</p>
-              <p class="function">Software Developer</p>
-              <p class="datetime"><time pubdate datetime="1677110400" title="{ page.date|format_date(pattern='Y-MM-dd') }}">Publicado em 23 de fevereiro de 2023</time></p>
-            </footer>
-          </article>
+      <footer class="mt-8 border-t pt-4 text-gray-500 text-sm flex flex-col gap-2">
+        <div>
+          <span>Tags:</span>
+                    <a href="/posts/tags/repository-patterns" class="text-orange-50 bg-orange-200 text-xs font-medium me-1 px-2.5 py-0.5 rounded-sm">repository-patterns</a>
+                    <a href="/posts/tags/DDD" class="text-orange-50 bg-orange-200 text-xs font-medium me-1 px-2.5 py-0.5 rounded-sm">DDD</a>
+                    <a href="/posts/tags/nodejs" class="text-orange-50 bg-orange-200 text-xs font-medium me-1 px-2.5 py-0.5 rounded-sm">nodejs</a>
+                  </div>
+        <div>
+          <span>Compartilhe:</span>
+          <a href="https://twitter.com/share?url=https://" target="_blank" rel="noopener"
+            class="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-3 py-1.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-1 mb-2"><i
+              class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/shareArticle?url=https://" target="_blank"
+            rel="noopener"
+            class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-3 py-1.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-1 mb-2"><i
+              class="fab fa-linkedin-in"></i></a>
         </div>
-        
-        <aside class="col-12 col-lg-4 mt-4 mt-lg-0">
-                              <a href="/blog/2021/07/04/deploy-na-digital-ocean-minhaexperiencia" aria-label="post anterior">
-            <div class="card bg-dark text-white mb-4">
-              <img class="card-img" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dm2Lt6gajeN4mGS8g-eD9g.jpeg" alt="Deploy na Digital Ocean MinhaExperiência">
-              <div class="card-img-overlay">
-                <h5 class="card-title">Deploy na Digital Ocean MinhaExperiência</h5>
-              </div>
-            </div>
-          </a>
-                              <a href="/blog/2023/02/23/thunder-client-sera-o-melhor-client-rest" aria-label="próximo anterior">
-            <div class="card bg-dark text-white mb-4">
-              <img class="card-img" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dm2Lt6gajeN4mGS8g-eD9g.jpeg" alt="Thunder Client: será o melhor Client REST?">
-              <div class="card-img-overlay">
-                <h5 class="card-title">Thunder Client: será o melhor Client REST?</h5>
-              </div>
-            </div>
-          </a>
-                    
+      </footer>
+    </article>
+    <section class="grid grid-cols-1 gap-6 justify-items-center lg:justify-items-end">
+      <aside>
+        <h2 class="text-3xl font-bold mb-4">Outros Posts</h2>
+                        <a href="/blog/2021/07/04/deploy-na-digital-ocean-minhaexperiencia"
+          class="bg-[url(https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dm2Lt6gajeN4mGS8g-eD9g.jpeg)] bg-cover bg-center grayscale hover:grayscale-0 transition-all block w-[320px] min-h-[180px] p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100"
+          alia-label="Deploy na Digital Ocean MinhaExperiência">
+          <article class="">
+            <h5 class="mb-2 text-lg font-bold tracking-tight text-white">Deploy na Digital Ocean MinhaExperiência</h5>
+          </article>
+        </a>
+                        <a href="/blog/2023/02/23/thunder-client-sera-o-melhor-client-rest"
+          class="bg-[url(https://miro.medium.com/v2/resize:fit:720/format:webp/1*3fbpaln09GEuAByVIeq6zA.png)] bg-cover bg-center grayscale hover:grayscale-0 transition-all block w-[320px] min-h-[200px] p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 mt-4"
+          aria-label="Thunder Client: será o melhor Client REST?">
+          <article class="">
+            <h5 class="mb-2 text-lg font-bold tracking-tight text-white">Thunder Client: será o melhor Client REST?</h5>
+          </article>
+        </a>
+                
+        <span class="block w-24 h-1 bg-orange-100 rounded-full mx-auto my-8"></span>
+
+        <div class="mb-4 flex flex-col gap-4">
                     <figure class="adsense">
             <a href="https://www.amazon.com.br/dp/B0BXQNRRFQ" aria-label="Curso de Programação com Javascript para Iniciantes: Guia Prático">
-              <img class="rounded" src="/assets/images/marketing/320x272-ebook-javascript-para-iniciantes.png" alt="Curso de Programação com Javascript para Iniciantes: Guia Prático">
+              <img class="w-full rounded-lg" src="/assets/images/marketing/320x272-ebook-javascript-para-iniciantes.png"
+                alt="Curso de Programação com Javascript para Iniciantes: Guia Prático">
             </a>
           </figure>
                     <figure class="adsense">
             <a href="https://www.digitalocean.com/?refcode=b053b4f18637&amp;utm_campaign=Referral_Invite&amp;utm_medium=Referral_Program&amp;utm_source=badge&#039;" aria-label="DigitalOcean Referral">
-              <img class="rounded" src="/assets/images/marketing/digital-ocean_v2.svg" alt="DigitalOcean Referral">
+              <img class="w-full rounded-lg" src="/assets/images/marketing/digital-ocean_v2.svg"
+                alt="DigitalOcean Referral">
             </a>
           </figure>
-                  </aside>
-      </div>
-    </div>
-</div>
-    </main>
+                  </div>
+      </aside>
+    </section>
+  </div>
+</main>
+  </main>
+
+  <footer
+    class="py-6 bg-gradient-to-br from-gray-950 via-gray-800 to-gray-600 text-white text-center text-sm border-t border-gray-100">
+    <p>&copy; <span id="current-year"></span> Moisés Fausto. All rights reserved. <a class="hidden" aria-label="RSS"
+        href="/atom.xml">RSS</a></p>
+  </footer>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="/assets/lib/typed/typed.min.js"></script>
+  <script src="/assets/lib/particles/particles.min.js"></script>
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+
+  <!-- Template Javascript -->
+  <script type="text/javascript" src="/build/js/app.js"></script>
+
+    
   
-    <footer class="footer">
-      <div class="content-inner">
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <p>&copy; <span id="current-year"></span> Moisés Fausto. All rights reserved. <a
-              class="d-none" aria-label="RSS" href="/atom.xml">RSS</a></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
-</div>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWECERXMS6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-<!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modaLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modaLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="fechar">
-          <span aria-hidden="true"><i class="fa fa-times"></i></span>
-        </button>
-      </div>
-      <div class="modal-body"></div>
-      <div class="modal-footer"></div>
-    </div>
-  </div>
-</div>
-<!-- Modal -->
+    gtag('config', 'G-XWECERXMS6');
+  </script>
 
-<a href="#" class="back-to-top" aria-label="ir para o topo"><i class="fa fa-angle-double-up"></i></a>
+  
+  
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8522560335974954"
+    crossorigin="anonymous"></script>
 
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/lib/easing/easing.min.js"></script>
-<script src="/assets/lib/typed/typed.min.js"></script>
-<script src="/assets/lib/waypoints/waypoints.min.js"></script>
-<script src="/assets/lib/isotope/isotope.pkgd.min.js"></script>
+  
+    </body>
 
-<!-- Template Javascript -->
-<script type="text/javascript" src="/build/js/app.js"></script>
-
-
-
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XWECERXMS6"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-XWECERXMS6');
-	</script>
-
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8522560335974954"
-        crossorigin="anonymous"></script>
-
-
-</body>
 </html>
